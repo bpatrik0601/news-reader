@@ -1,0 +1,52 @@
+# ----------------------------------
+# Python virtual environment
+# ----------------------------------
+.venv/
+venv/
+ENV/
+env/
+
+# ----------------------------------
+# Python cache / build artifacts
+# ----------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ----------------------------------
+# PyCharm / JetBrains
+# ----------------------------------
+.idea/
+*.iml
+
+# ----------------------------------
+# OS / editor junk
+# ----------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------------
+# Logs / temp files
+# ----------------------------------
+*.log
+*.tmp
+
+# ----------------------------------
+# LLM / agent runtime artifacts
+# (snapshots, caches, generated data)
+# ----------------------------------
+llm/cache/
+llm/output/
+models/*.bin
+models/*.gguf
+models/*.safetensors
+
+
+# ----------------------------------
+# Secrets / local config
+# ----------------------------------
+.env
+.env.*
