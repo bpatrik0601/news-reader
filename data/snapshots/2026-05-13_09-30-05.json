@@ -1,0 +1,218 @@
+{
+  "run_id": "2026-05-13_09-30-05",
+  "timestamp": "2026-05-13T09:30:05.154489",
+  "topic": "Magyar Péter",
+  "models": {
+    "llm": "mistral-nemo:12b"
+  },
+  "articles": {
+    "fetched": [
+      {
+        "id": "Telex-0",
+        "source": "Telex",
+        "title": "Szájkarate: Orbán színészi teljesítménye vs. „Keresett a rém!”",
+        "published_at": "2026-05-13T07:24:25",
+        "content": "Szájkarate: Orbán színészi teljesítménye vs. „Keresett a rém!” Ez itt a Szájkarate 3.0, amiben a 2026-os választási kampány legbizarrabb történetét keressük. Volt miből válogatni! Ez még az első fordulós selejtező, az előző meccsben a Radnaimark.hu és az önjáró Lázár János csaptak össze, a győztes végül Lázár lett, magabiztos, 10 százalékpontos fölénnyel. Jöjjön a következő meccs – ami akár előrehozott döntőnek is beillene, de ahogy majd látni fogjuk a későbbiekben, csupa előrehozott döntőből áll ez a Szájkarate-szezon! Ha most tanácstalanul olvassa ezt az egészet, akkor itt egy rövid leírása annak, hogy mi is az a Szájkarate. ORBÁN SZÍNÉSZI PÁLYÁJA A Fidesz elbaltázott kampányát ugyan elvileg Orbán Balázs irányította, de a tűzhöz közel állók azt mondják, ez csak papíron volt így, és valójában Orbán Viktor volt a főnök. Ezt talán sosem fogjuk biztosan megtudni, az viszont tuti, hogy a kampány a miniszterelnök körül forgott, ő volt az egyértelmű főszereplője. Ezen a főszereplésen keresztül pedig az is tökéletesen látszik, hogyan siklott ki az egész. Első felvonás, még tavaly novemberből, a Rónai Egon-féle interjú. A gépezet olajozottan működik, a kérdések puhák, a válaszok kemények, a nézettség millió felett, és a végére jön a tökéletesen kitalált slusszpoén: Orbán megmutatja a kamerának az interjú közben összefirkált papírlapját. Amit aztán napokig elemez a tízmillió grafológus-pszichológus-hieroglifakutató országa, pólóminta lesz belőle, maga Orbán meg szerényen csak annyit mond, hogy ez afféle titkos nyelv, ami segít neki koncentrálni, és csak ő maga érti. Hát igen, a géniuszok már csak így működnek, na, teszi hozzá minden fideszes gondolatban. 10/10-es kampánytrükk, pár napig zsebben a közbeszéd. Második felvonás, március eleje, a Fidesz aktuális propagandafegyvere egy manipulatívan megvágott videó, amin egy titkosszolgálati tisztből random konteós nyugdíjassá lett ukrán bácsi összevissza beszél. Erre csatlakozik rá Orbán egy videóval, amiben végigtelefonálja a g"
+      },
+      {
+        "id": "Telex-1",
+        "source": "Telex",
+        "title": "Értékeli a Fővárosi Főügyészség Sulyok Tamás volt kommunikációs igazgatójának közérdekű bejelentését",
+        "published_at": "2026-05-13T07:17:01",
+        "content": "Értékeli a Fővárosi Főügyészség Sulyok Tamás volt kommunikációs igazgatójának közérdekű bejelentését „Az Ön által megjelölt paramétereknek megfelelő beadvány megérkezett a Fővárosi Főügyészségre, annak értékelése és hivatali elintézése folyamatban van” – írta a Telex megkeresésére a Fővárosi Főügyészség, miután arról a közérdekű bejelentésről érdeklődtük, amit Szántó Georgina, Sulyok Tamás államfő volt kommunikációs igazgatója nyújtott be a napokban egy repülésbiztonsági kockázatokkal kapcsolatos, a köztársasági elnököt érintő ügyben. Szántó a Facebook-posztban azt fejtegette, hogy korábban megkereste őt két honvédségi pilóta és súlyos, potenciálisan veszélyes helyzetekhez vezető hiányosságokra hívták fel a figyelmét a szabályzatkezelés és repülésbiztonság területén. Bejegyzése szerint a pilóták az általul észlelt problémákat már többször is jelezték korábban, de nem jutottak előrébb, ezért próbáltak a köztársasági elnökhöz fordulni így. Szántó ezután elmondása szerint ezt jelezte a köztársasági elnöknek, aki azzal válaszolt, hogy nem tud a problémával mit kezdeni, de azt kérte, hogy a jövőben mindig ez a két pilóta szállítsa. Szántó szerint ez máig így van. A volt kommunikációs igazgató posztjának megjelenése után kerestük a köztársasági elnök hivatalát, a Sándor-palotát, ahonnan azt a választ kaptuk, hogy a köztársasági elnök légi szállítását minden alkalommal a Magyar Honvédség beosztása szerinti állomány végezte, a Sándor-palota az egyes utakra vonatkozóan a pilóták személyéről tájékoztatást kapott. „Mivel a Magyar Honvédség az eddig bevált gyakorlatban kormányzati egyeztetés és szolgálati út alapján végzi a személyszállításokat, a – Magyar Honvédség felett vezetési illetve szolgálati elöljárói jogkörrel nem rendelkező – köztársasági elnök hivatala a volt kommunikációs igazgató által említett felvetéseket jelezte a kormányzat felé” – írták."
+      },
+      {
+        "id": "Telex-2",
+        "source": "Telex",
+        "title": "Havazott a Kékesen az első fagyosszent éjjelén",
+        "published_at": "2026-05-13T07:11:05",
+        "content": "Havazott a Kékesen az első fagyosszent éjjelén Május 12., 13. és 14. napjait nevezi a népi hagyomány fagyosszenteknek, ami a héten ismét aktuális lett: nem csak lehűlés és eső köszöntött az országra a hét első felében, de kedd éjjel még havazott is a Kékestetőn. Az Időkép kameráján jól kivehető, hogy sötétedés után kifehéredett a hegycsúcs. Mindez a fagyosszentek (Pongrác, Szervác, Bonifác) első napján, május 12-én éjjel ment végbe, miután a Mátrában fagypont alá csökkent a hőmérséklet. Ezen kívül több helyen hozott fagyokat ez az időszak, az ország nyugati részén -1, -2 fokos fagyot mértek szerda hajnalban, de csütörtök, az utolsó fagyosszent reggele is hozhat még fagyokat az előrejelzések szerint."
+      },
+      {
+        "id": "Telex-3",
+        "source": "Telex",
+        "title": "Borús kép az építőiparban, jócskán beesett az új projektek száma",
+        "published_at": "2026-05-13T06:54:05",
+        "content": "Borús kép az építőiparban, jócskán beesett az új projektek száma Éves alapon a nyers adatok alapján 3,9 százalékkal, a munkanaptényezővel kiigazított adatok szerint pedig 2 százalékkal nőtt az építőipari termelés volumene márciusban a Központi Statisztikai Hivatal (KSH) legfrissebb adatai alapján. Havi alapon enyhe, 0,5 százalékos növekedést produkált az építőipar. 2026 első negyedévében a szektor termelői árai 4,7 százalékkal nőttek az előző év azonos időszakához képest. Éves alapon 4,4 százalékkal épült több épület, ami az egyéb építményeket (utak, hidak, közművek stb.) illeti, ott éves alapon 3 százalékos volt a bővülés. Az építőipari ágazatok közül az épületek építése 5,4 százalékkal tudott bővülni az egy évvel korábban mért adathoz képest, az egyéb építmények építése viszont 8,3 százalékkal kisebb volt. A legnagyobb súlyú ágazatnak számító speciális szaképítés termelése szintén bővült 2025 márciusához képest, 7,3 százalékkal. A jövőre nézve nem fest jó képet, hogy a megkötött új szerződések száma 2,9 százalékkal csökkent előző évhez képest, ezen belül az épületek építésére kötött szerződések 19,2 százalékkal estek vissza, az egyéb építményekre vonatkozó szerződések száma viszont 26,2 százalékkal nőtt. Az év első hónapjában a termelés volumene 4,2 százalékkal elmaradt az előző év azonos időszakitól. A Portfolio azt írja, ezek alapján egyelőre az idei év sem lesz az építőipar éve, így a GDP egyik olyan komponense maradt, ami visszahúzza a gazdasági teljesítményt. Januárban éves és havi alapon is nagyon bezuhant az építőipar, amiben szerepet játszott az extrém hideg és a rengeteg hó is. Februárban némileg korrigált a mutató, éves alapon stagnált, havi alapon viszont némileg (4,9 százalékkal) növekedett az építőipar termelése."
+      },
+      {
+        "id": "Telex-4",
+        "source": "Telex",
+        "title": "Magyar Péter homályos ígéretet tett az ügynökaktákról, amivel akkor is csak nyerhetünk, ha végül csalódást okoz",
+        "published_at": "2026-05-13T06:52:09",
+        "content": "Magyar Péter homályos ígéretet tett az ügynökaktákról, amivel akkor is csak nyerhetünk, ha végül csalódást okoz „Ügynökakták, mint olyanok, nem léteznek” – Gulyás Gergely, 2024. február 1. „A Tisza-kormány megnyitja az ügynökaktákat” – Magyar Péter, 2026. április 23. A magyar politikatörténet 36 éve tartó kutyakomédiájának vethet véget Magyar Péter, ha betartja az ígéretét. Márpedig elszántnak látszik, már a határidőt is kijelölte, október 22-re ígéri a megvalósítást. Szimbolikus dátum egy szimbolikus ügynek, az '56-os forradalom 70. évfordulójának előestéje méltó időpont lehet az 1990-es rendszerváltás elszalasztott, és igazán soha ki nem mondott ígéretének teljesítésére. Ugyan az elmúlt közel negyven évben pártok, szakmabeliek, civilek részéről is folyamatosan felmerült az igény arra, hogy az állambiztonsági iratok nyilvánosságával elősegítsék a történelmi igazságtételt és a lusztrációt, azaz a hatalmat gyakorlók átvilágítását, a gyakorlatban soha, egyetlen kormánynak sem volt komoly politikai szándéka arra, hogy ezt megvalósítsák, a politikai érdekek mindig felülírták a szakmai érveket és társadalmi elvárásokat. Az elmúlt 16 évben például legalább harmincszor lett volna lehetőségük a kormánypártoknak, hogy növeljék az ügynökiratok nyilvánosságát, de az eleinte Schiffer András, később az LMP által benyújtott javaslatot folyamatosan leszavazták, még vitázni sem voltak hajlandóak róla. Egy héttel Magyar Péter színre lépése előtt Gulyás Gergely egy kormányinfón kategorikus nemmel válaszolt a Telexnek arra a kérdésre, hogy nem segítené-e a múlttal való szembenézést, ha nyilvánosságra hoznák az ügynökaktákat. Magyar Péter már a kampányban is többször beszélt az aktanyilvánosságról, majd kancelláriaminiszterré nevezte ki Ruff Bálintot, aki a Válasz Online-nak adott interjújában az első és legfontosabb elintézendő feladatának nevezte, hogy a lehető leghamarabb nyilvánosságra hozzák az ügynökaktákat „a lehető legkevesebb nemzetbiztonsági érdekre hivatkozó kitakarással”. P"
+      },
+      {
+        "id": "Telex-5",
+        "source": "Telex",
+        "title": "A kormányváltással együtt megszűnt a NAV-elnök megbízatása",
+        "published_at": "2026-05-13T06:47:23",
+        "content": "A kormányváltással együtt megszűnt a NAV-elnök megbízatása Megszűnt a megbízatása, nem Vágujhelyi Ferenc már a Nemzeti Adó- és Vámhivatal (NAV) elnöke – erősítette meg a Telex megkeresésére a NAV. Vágujhelyi státuszára azután kérdeztünk rá, hogy kedden Ruszin Zsolt, a Magyar Könyvelők Országos Egyesülete (MKOE) alelnöke a NAV elnökének leköszönéséről posztolt. A NAV válaszában a törvényi rendelkezésekkel magyarázta a váltást. „A NAV vezetőjére vonatkozó közjogi szabály (NAV törvény 6. § (1) bekezdése) 2016 január 1-jétől megváltozott. Azóta a NAV vezetője/elnöke államtitkárként látja el ezt a feladatot”. Mint írták, „az államtitkár megbízatása megszűnik a miniszterelnök megbízatásának megszűnésével. Ezért 2026. május 13-tól az államtitkári kinevezésig a hatályos, helyettesítésre vonatkozó szabályok érvényesek.”"
+      },
+      {
+        "id": "Telex-6",
+        "source": "Telex",
+        "title": "Perger Ágnes óbudai ügyvéd lesz Forsthoffer Ágnes kabinetfőnöke",
+        "published_at": "2026-05-13T06:45:36",
+        "content": "Perger Ágnes óbudai ügyvéd lesz Forsthoffer Ágnes kabinetfőnöke Egy óbudai ügyvédet, Perger Ágnest kérte fel kabinetfőnöknek az Országgyűlés elnöke, Forsthoffer Ágnes – tudta meg a Magyar Nemzet egy, a Tisza Párthoz közeli forrásból. Értesülésüket Perger Ágnes, az óbudai Perger Ágnes Ügyvédi Iroda vezetője megerősítette a lapnak. A Perger Ágnes nevével jegyzett ügyvédi irodában annak honlapja alapján három ügyvéd dolgozik együtt, magánszemélyeknek és vállalkozások ügyeit is vállalják. Mások mellett polgári joggal, munkajoggal és végrehajtási joggal, továbbá civil szervezetek jogával is foglalkoznak. Perger Ágnesről megjegyezik még, hogy férje, Papp Imre egykor Kuncze Gábor személyes belügyminiszteri tanácsadója volt, majd volt helyettes államtitkár, Gyurcsány Ferenc alatt pedig az Igazságügyi és Rendészeti Minisztérium államtitkárává nevezték ki, ahol 2009-ig dolgozott ebben a pozícióban, később Zuglóban lett jegyző. A kabinetfőnöki pozíciót Kövér László házelnöksége alatt Veress László töltötte be, a hivatalos pozíciója az Elnöki Titkárság vezetője volt. Hivatalos munkaköri leírást erről a pozícióról nem, csak az Elnöki Titkárság munkájáról találni. Eszerint a titkárság olyan szervezeti egység, mely ellátja a házelnök által meghatározott, az elnöki tevékenység elősegítésével kapcsolatos teendőket, továbbítja a házelnök által meghatározott feladatokat, ellenőrzi azok végrehajtását és gondoskodik a házelnökhöz érkező iratok feldolgozásáról, az iratokkal kapcsolatos ügyintézésről, intézi az Országgyűléshez, valamint a házelnökhöz érkezett közérdekű bejelentésekkel és javaslatokkal összefüggő teendőket is. Emellett szervezi a házelnök különféle társadalmi, érdekképviseleti, egyházakkal való kapcsolatát, szervezi, illetve koordinálja a házelnök programját is."
+      },
+      {
+        "id": "Telex-7",
+        "source": "Telex",
+        "title": "Niedermüller Péter is kiszáll a DK-ból",
+        "published_at": "2026-05-13T06:33:51",
+        "content": "Niedermüller Péter is kiszáll a DK-ból Niedermüller Péter, Erzsébetváros polgármestere kilép a DK-ból – írta a Facebookon. Niedermüller a párt alapító tagja, volt alelnöke és EP-képviselője is. A döntése mögött a Demokratikus Koalíció választási eredménye áll. „Be kell látnom, valamit rosszul csináltunk, valami nagyon félre csúszott. A legutóbbi országgyűlési választások eredménye azt mutatja, hogy a magyar társadalom nem tart igényt arra a politikára, amit a DK kínált” – írja. Megjegyezte, hogy az elmúlt közel 15 évben sok politikai vitát folytatott a pártban, és ugyan sok kérdésben nem ugyanúgy gondolkodtak, meg volt győzve arról, hogy van egy közös alap és közös felelősség. Azt írja, hogy emiatt nem eltávolodott a közösségtől, hanem hátrébb húzódott. „Hittem, és ma is hiszek azokban az értékekben, abban a vízióban, amelyekre egykor a Demokratikus Koalíciót építeni akartuk. Továbbra is hiszem, hogy szükség van morális alapokon nyugvó, demokráciát, társadalmi igazságosságot, befogadó társadalmat hirdető, a liberális és zöld elveket tiszteletben tartó baloldali politikára.” A DK a választási vereség után újjá akarja szervezni magát, és Niedermüller nem vitatja, hogy az igény jogos, de ebben a folyamatban már nem akar párttag lenni. Szerinte alapjaiban kell újragondolni a baloldali politikai lehetőségeit Magyarországon. Nem is feltétlenül pártpolitikai alapokban gondolkodik, hanem szélesebb társadalmi szerveződésben, közösségek építésében. „Tisztelem mindazokat, akik a Demokratikus Koalícióban tovább dolgoznak a megújulásért, még akkor is, ha én más következtetésre jutottam. Sok közös munka, vita és személyes kapcsolat köt ehhez a közösséghez, ezért nem haraggal, hanem őszinte tisztelettel búcsúzom” – zárta bejegyzését. Niedermüller eredeti szakmáját tekintve etnográfus és kultrális antropológus, tanított a Pécsi Tudományegyetemen, az ELTE-n és a berlini Humboldt Egyetemen is. A DK 2011-es alapítása óta tag és a párt alelnöke, a 2014-es EP-listán a harmadik helyről j"
+      },
+      {
+        "id": "Telex-8",
+        "source": "Telex",
+        "title": "Magyar Péter nem költözik kormányzati rezidenciába",
+        "published_at": "2026-05-13T06:11:00",
+        "content": "Magyar Péter nem költözik kormányzati rezidenciába „Miniszterelnöki szolgálati gépkocsiként az országjáráson már megismert kék Škoda SUPERB-t használom. Továbbá jelzem, hogy nem költözöm kormányzati rezidenciába. Maradok abban a budai házban, ahol a gyermekeim otthon vannak” – jelentette be Magyar Péter miniszterelnök szerdán reggel a Facebookon. Az Országgyűlés keddi, ünnepi ülésén letették az esküt az első Tisza-kormány kinevezett miniszterei, ezzel hivatalosan is megalakult Magyar Péter vezetésével az új kormány. A minisztereket Magyar jelölte, és Sulyok Tamás köztársasági elnök nevezte ki őket pár órával a parlamenti ülés előtt, megbízólevelüket a Sándor-palotában vették át. A Magyar-kormány éjfélkor lépett hivatalba, szerdán már kormányülést is tartanak, Magyar Péter kedden este jelentette be, hogy a Tisza-kormány első ülését 15 órától tartják Ópusztaszeren, méghozzá a szimbolikus jelentőség mellett a rendkívüli aszályhelyzet miatt is. Magyar Péter bejelentésében azt írta, az ülés előtt vízügyi és agrárszakemberekkel tájékozódnak a jelenlegi helyzetről, hogy aztán a rövid távon szükséges intézkedésekről döntsenek, és elrendeljék a közép- és hosszú távú vízgazdálkodási megoldások és fejlesztések kidolgozását. A Tisza-kormányban összesen 16 miniszter lesz. Közülük 11-en országgyűlési képviselők is egyben, négyen listáról kerültek be, a többiek egyéniben nyerték a mandátumukat. A kormányt miniszterelnökként Magyar Péter vezeti, helyettese Orbán Anita lesz, aki egyben külügyminiszterként is tagja a kabinetnek. A kormányzati rezidenciák körül még a '90-es évek végén kezdődött kálvária, Orbán Viktor 1998-ban még ideiglenesen beköltözött a Béla király úti rezidenciára, akkor még Áder János, az Országgyűlés elnöke is ott élt a családjával együtt, 2002 tavaszán, a kormányváltás után kiköltöztek onnan. Később sem Medgyessy Péter, sem Gyurcsány Ferenc, sem Bajnai Gordon nem költözött kormányzati rezidenciába, és Orbán Viktor is maradt 16 éven át a Cinege úti házában."
+      },
+      {
+        "id": "Telex-9",
+        "source": "Telex",
+        "title": "Bántalmazás gyanúja miatt nyomoz a rendőrség a Debreceni Javítóintézetben",
+        "published_at": "2026-05-13T05:58:07",
+        "content": "Bántalmazás gyanúja miatt nyomoz a rendőrség a Debreceni Javítóintézetben Már a rendőrség felügyelete alá tartozott a Debreceni Javítóintézet, amikor egy nevelő március végén bántalmazhatott egy rábízott fiatalt – írja a 24.hu. Az ügyben büntetőeljárást indított a rendőrség, az érintett nevelő munkaviszonyát pedig megszüntették, már nem dolgozik az intézményben. A 24.hu kérdésére a hatóságok megerősítették az esetet, és hogy eljárás indult az ügyben. A Hajdú‑Bihar Vármegyei Főügyészség közölte, hogy a debreceni intézet igazgatója jelentette fel a nevelőt, a megyei rendőrség pedig elárulta, hogy ezután nyomozást indított közfeladatot ellátó személy eljárásában elkövetett bántalmazás gyanújával. A rendőrség közölte azt is, hogy a bántalmazás 2026. március 29‑én történt. A fogvatartott fiatal a rendőrség válasza szerint nem szenvedett sérülést a bántalmazás miatt. A gyanúsítottat egyelőre nem hallgatták ki a nyomozás során, amelyet a Debreceni Járási Ügyészség felügyel. Ennél több részletet nem árult el a rendőrség a lapnak. Azt, hogy a korábbi nevelő már nincs az intézménynél, a Büntetés-végrehajtás Országos Parancsnoksága (BVOP) erősítette meg a lapnak. A debreceni intézményt is felügyelő BVOP azt írta, hogy a Debreceni Javítóintézet önállóan tárta fel a március végén történt bántalmazást, és egy belső vizsgálat alapján tettek feljelentést április 22-én. Azt írták, az eset után nem volt szükség a bántalmazott fiatal áthelyezésére. A 24.hu szerint a rendőrség fogvatartottként hivatkozott a bántalmazott fiatalra, de pontos életkorát nem erősítették meg. Ez alapján ugyanis nem ismert, hogy kiskorú fogvatartottról van-e szó, mivel a Debreceni Javítóintézetben 12–21 éves fiúk vannak. A Fidesz-kormány 2025. év végén, a Szőlő utcai javítóintézetet érintő botrányok után hozott döntést arról, hogy a javítóintézeteket a rendőrség, pontosabban a büntetés-végrehajtás felügyelete alá helyezi át a szociális intézményrendszerből. Gulyás Gergely miniszter akkor azzal igazolta az int"
+      },
+      {
+        "id": "HVG-10",
+        "source": "HVG",
+        "title": "Fogy a DK, kilépett a pártból Niedermüller Péter erzsébetvárosi polgármester is",
+        "published_at": "2026-05-13T07:26:35",
+        "content": "„A DK most újjá akarja szervezni magát. Nem vitatom, hogy ez jogos igény, de én ebben a folyamatban már egyszerű párttagként sem kívánok részt venni” – írta Niedermüller Péter, Erzsébetváros polgármestere Facebook-posztjában, bejelentve kilépését a Demokratikus Koalícióból (DK). A politikus, aki a DK alapító tagja és 2011-től alelnöke volt, sőt 2014-2019 között a párt EP-képviselője, 2019 óta pedig a VII. kerületet irányítja, azt írta: „A legutóbbi országgyűlési választások eredménye azt mutatja, hogy a magyar társadalom nem tart igényt arra a politikára, amit a DK kínált”. https://www.facebook.com/PNiedermueller/posts/pfbid02FR7ZBaHm7Ruby1n7w8r9ouUfpK6v3RG61w1M3XK6zT1qXwAikiHQJM6UuPxqVDoMl Úgy látja, most alapjaiban kell újragondolni a baloldali politika lehetőségeit, ő pedig abban hisz, hogy „ennek elsődleges terepe nem a pártpolitika, hanem egy szélesebb társadalmi mozgalom és új közösségek építése lehet.” Hozzátette: „be kell látnom, valamit rosszul csináltunk, valami nagyon félrecsúszott.” Nem Niedermüller az egyetlen, aki a választások óta elhagyta a pártot. A HVG is írt arról, hogy már két nappal a választások után kilépett a DK-ból Kiss László óbudai polgármester. Nem sokkal később Trippon Norbert újpesti polgármester is kilépett. Volt olyan is, aki nem magától ment, hiszen a pártnál már a választások másnapján elbocsátások kezdődtek: https://hvg.hu/itthon/20260416_elbocsatasok-a-demokratikus-koalicional-mar-hetfon-a-valasztas-masnapjan-megvaltak-dolgozoktol Közben a DK-t a választási vereség után aktivistajelentkezésekkel támadták honlapjukat: kibertámadás, de sima trollkodás is lehetett, hogy hamis aktivista-jelentkezések százaival bénították meg az informatikai rendszerüket. A párt amúgy június 13-án tartja tisztújító kongresszusát, ahol a választási vereség miatt lemondott Dobrev Klára utódját: https://hvg.hu/itthon/20260417_tisztujitas-demokratikus-koalicio-kongresszus-dobrev-klara-elnokseg Nyitóképünkön Niedermüller Péter, Fotó: HVG / Cabrera Martin"
+      },
+      {
+        "id": "HVG-11",
+        "source": "HVG",
+        "title": "Megszűnt a NAV-elnök megbízatása",
+        "published_at": "2026-05-13T07:17:47",
+        "content": "A projektelszámolás költségterve a számviteli elszámolásban Nem egyszerű vezetői segédlet, hanem a megbízható árbevétel- és eredménykimutatás egyik alapfeltétele. Nem egyszerű vezetői segédlet, hanem a megbízható árbevétel- és eredménykimutatás egyik alapfeltétele. Mikor áfamentes? A kérdésre dr. Csobánczy Péter, az Adózóna szakértője válaszolt. Már párszáz milliós hitelnagyság esetén is – akár több tízmillió forinttal – többe kerülhet cégünknek, ha csupán a kamatszint alapján döntünk. Egyre több szektorban kötelező a felelősségbiztosítás. Mire nyújt valódi védelmet? És mikor fizetjük hiába a díjat?"
+      },
+      {
+        "id": "HVG-12",
+        "source": "HVG",
+        "title": "„A Magyar Péter vezette kormány nem fog bezárkózni vastag falak mögé” – minisztereket kérdeztünk",
+        "published_at": "2026-05-13T06:58:37",
+        "content": "„A Magyar Péter vezette kormány nem fog bezárkózni vastag falak mögé” – minisztereket kérdeztünk Az új Országgyűlés alakulása óta mindössze három nap telt el, és máris megalakult a Tisza-kormány. A leendő miniszterek közül Gajdos Lászlót, Radnai Márkot, Kármán Andrást, Tanács Zoltánt és Bóna Szabolcsot kérdeztük arról, hogyan tartják a kapcsolatot az állampolgárokkal, és a civileknek milyen lehetőségeik lesznek a véleményük kifejezésére."
+      },
+      {
+        "id": "HVG-13",
+        "source": "HVG",
+        "title": "A gyatra évkezdés után életjeleket mutat az építőipar",
+        "published_at": "2026-05-13T06:55:58",
+        "content": "A projektelszámolás költségterve a számviteli elszámolásban Nem egyszerű vezetői segédlet, hanem a megbízható árbevétel- és eredménykimutatás egyik alapfeltétele. Nem egyszerű vezetői segédlet, hanem a megbízható árbevétel- és eredménykimutatás egyik alapfeltétele. Mikor áfamentes? A kérdésre dr. Csobánczy Péter, az Adózóna szakértője válaszolt. Már párszáz milliós hitelnagyság esetén is – akár több tízmillió forinttal – többe kerülhet cégünknek, ha csupán a kamatszint alapján döntünk. Egyre több szektorban kötelező a felelősségbiztosítás. Mire nyújt valódi védelmet? És mikor fizetjük hiába a díjat?"
+      },
+      {
+        "id": "HVG-14",
+        "source": "HVG",
+        "title": "Jövőre is Conan O’Brien lesz az Oscar-házigazda",
+        "published_at": "2026-05-13T06:53:29",
+        "content": "Március 14-én tartják a 2027-es Oscar-gálát, de ennél is fontosabb hír, hogy a ceremóniát ismét Conan O'Brien fogja vezetni. Ahogy azt az elmúlt két alkalommal is tette, adta hírül a Variety. Egy éve finomkodó és bátortalan volt a gála, úgyhogy Conan O’Brien műsorvezető idén bekeményített, és nem spórolta meg a bevállalósabb közéleti poénokat sem, és még Jimmy Kimmel is besegített – írtuk O'Brien idei teljesítményéről. Össze is gyűjtöttük a műsorvezető-komikus legjobb Oscar-gálás poénjait: https://hvg.hu/elet/20260316_ezek-voltak-az-oscar-gala-legjobb-viccei-conan-o-brien-jimmy-kimmel-donald-trump O'Brien korábban olyan műsorokat vezetett, mint a Late Night with Conan O’Brien és a The Tonight Show with Conan O’Brien. Ha épp nem az Oscar műsorvezetője, a Conan O’Brien Needs a Friend podcast epizódjait készíti."
+      },
+      {
+        "id": "HVG-15",
+        "source": "HVG",
+        "title": "Jön a Halálos iramban tévésorozat, és nem is csak egy",
+        "published_at": "2026-05-13T06:52:00",
+        "content": "Vin Diesel jelentette be, hogy négy új tévésorozat készül a franchise alapján a Peacock streamingplatform számára. A színész szerint a rajongók régóta szeretnék jobban megismerni a filmsorozat ikonikus karaktereit, és azok háttértörténeteit. A Peacock egyelőre csak egyetlen sorozatot rendelt be hivatalosan, a többi projekt még fejlesztés alatt áll. A történetekről egyelőre kevés részletet árultak el, de Diesel szerint az új szériák tiszteletben tartják majd a Halálos iramban-filmek örökségét és „családközpontú” hangulatát. https://twitter.com/Variety/status/2053868365974745234 A sorozatok mögött több ismert producer is ott áll majd, köztük Neal Moritz és Chris Morgan, akik korábban a mozifilmeknél is dolgoztak. Vin Diesel executive producerként vesz részt a projektekben. A Halálos iramban franchise eddig 11 filmmel több mint 7,3 milliárd dolláros bevételt termelt világszerte. A széria utolsó mozifilmjének premierjét közben ismét elhalasztották, így jelenleg 2028 márciusára várják a bemutatót. A franchise első része 2001-ben került a mozikba, a 25. évfordulót pedig a cannes-i filmfesztiválon is megünneplik egy különleges vetítéssel. https://hvg.hu/kultura/20260512_cannes-filmfesztival-mi-varhato-nemes-jeles-laszlo-vin-diesel-john-travolta"
+      },
+      {
+        "id": "HVG-16",
+        "source": "HVG",
+        "title": "Magyar Péter nem költözik be a kormányrezidenciára, és megtartja országjárós Skodáját hivatali autónak",
+        "published_at": "2026-05-13T06:42:13",
+        "content": "Marad otthon, eddigi lakóhelyén miniszterelnökként is Magyar Péter – a kormányfő ezt szerdán a Facebookon jelentette be. Azt írta, „jelzem, hogy nem költözöm kormányzati rezidenciába, maradok abban a budai házban, ahol a gyermekeim otthon vannak”. Magyar Péter Facebook-posztjában azt is írta, „miniszterelnöki szolgálati gépkocsiként az országjáráson már megismert kék Škoda SUPERB-t használom”. Vagyis a kormányfő egy eddig miniszteri szintű autót fog használni miniszterelnöki járműként. https://www.facebook.com/peter.magyar.102/posts/pfbid02zijAvXgdkgSvLjCUKyK9fhkMWVvjcpBgsoj2m5cSFiwGReMcwonusGjWqCNpB4Asl Egyelőre nem tudni, hogy mi lesz a sorsa, ki fogja használni a korábbi miniszterelnök, Orbán Viktor által használt járműveket. Orbán több, nagy értékű gépkocsit is használt hivatalos útjai alkalmával, a kisbuszokat talán jobban kedvelte a szedánoknál, de használta mindkettőt. https://hvg.hu/itthon/20260330_orban-viktor-kisbusz-mercedes-benz-v-class-felcsut-bekescsaba Az Orbán által használt hivatali járműflottából a legnagyobb figyelmet bizonyosan a BMW 760i xDrive Protection G7L hosszított tengelytávú limuzin keltette, amely ráadásul péncélozott kivitelben készült, és az árát mintegy 100 millió forintra becsülték korábban. https://hvg.hu/itthon/20250306_orban-viktor-bmw-franciaorszag Nyitóképünkön Magyar Péter a kormányfői autóval. Facebook / Magyar Péter"
+      },
+      {
+        "id": "HVG-17",
+        "source": "HVG",
+        "title": "Beindult az akkugyártás, javítottak az autógyárak, így nőtt szépet a magyar ipar",
+        "published_at": "2026-05-13T06:34:12",
+        "content": "Kimondottan jól teljesített a magyar ipar idén márciusban, az egy évvel korábbihoz képest 6,7 százalékkal nőtt a nyers adat szerint, de ha ebből kivesszük annak a hatását, hogy az idei márciusban több munkanap volt, mint a tavalyiban, akkor is marad 3,7 százalék növekedés – számolt a Központi Statisztikai Hivatal. A februári, gyenge adathoz képest egy hónap alatt 3,1 százalékos volt a bővülés. A mostaninál nagyobb éves szintű növekedést utoljára 2022 szeptemberében mért a KSH. Ha pedig azt nézzük, hogy több évnyi esést követően hol tart most a kilábalás: az elmúlt évek mélypontja a tavaly november volt, amikor a 2021-es szint 91,9 százaléka volt a termelés, mostanra 95,9 százalékra sikerült visszakapaszkodni. A fő számok nem változtak a korábban kiadott első becsléshez képest, de most azt is részletezte a KSH, hogyan állt össze a kellemes meglepetést jelentő adat. A magyar ipar legfontosabb ágazata, a járműgyártás 3,7 százalékkal tudott növekedni, méghozzá úgy, hogy a gépjárművek gyártása 5,6, az alkatrészgyártás 0,4 százalékkal nőtt. Ez sem rossz a korábbi hónapokhoz képest, de most még többet jelentett, hogy a második, a harmadik és a negyedik legfontosabb ágazatban nagy növekedést mértek. Az elektronikai és optikai termékek gyártása 22 százalékkal bővült, főleg annak köszönhetően, hogy a számítógépeknél és perifériás egységeknél 69 százalékos volt a növekedés. Jól teljesített az élelmiszeripar is, ebben 9,2 százalékos bővülést mért a KSH. Belendült az akkugyártás is, igaz, kimondottan alacsony bázisról tudott növekedni: ebben 34 százalékos növekedést mért a KSH, így a villamos berendezések gyártásánál (amelynek egy része az akkumulátoripar) 11,4 százalékos lett az emelkedés. Összességében azért ez csak kozmetikázni tudja a februári gyenge számot, 2026 első három hónapjában összességében 1 százalékkal volt nagyobb az ipari termelés, mint 2025 január-márciusában."
+      },
+      {
+        "id": "HVG-18",
+        "source": "HVG",
+        "title": "Csendben eltűnik a piacról a Volkswagen praktikus autója",
+        "published_at": "2026-05-13T06:32:00",
+        "content": "Véget ér egy korszak a Volkswagennél: 23 év után leállt a Touran gyártása. A német márka 2026 áprilisában készítette el az utolsó példányt az egyterűből, amelyből 2002 óta több mint 2,3 millió darab készült. A Touran hosszú éveken át a családosok egyik kedvence volt, köszönhetően a tágas utastérnek, a variálható üléseknek és a kompakt méretnek. Bár sokan praktikus alternatívaként tekintettek rá a SUV-k mellett, az egyterűek népszerűsége az elmúlt években folyamatosan csökkent. A Volkswagen szerint a Touran helyét mostantól a Tiguan és a Tayron veszi át a kínálatban. A wolfsburgi gyártósorokon is ezeknek a crossovereknek a gyártása folytatódik tovább. A második generációs Tourant 2015-ben mutatták be, és egészen 2.0 literes motorokig többféle hajtáslánccal kínálták. Az autó egyik nagy előnye a hatalmas, akár 1980 literes csomagtartó és az akár 1800 kilogrammos vontatási kapacitás volt."
+      },
+      {
+        "id": "HVG-19",
+        "source": "HVG",
+        "title": "Keszte Róbert, az Aumovio vezetője: Az önvezető autók elterjedése lassabb a vártnál, de a cél nem az ember gyors helyettesítése",
+        "published_at": "2026-05-13T06:30:27",
+        "content": "Európa sokáig az autóipari mérnöki tudás egyik központja volt, de egyszerre éri a kínai verseny, az elektromos átállás és a szoftveresedés. Miben maradhat erős, és hol csúszott le? A kontinens erőssége továbbra is a biztonság: a szabályozási környezet, a szigorú minőségi követelmények és a rendszerszintű gondolkodás világszinten is irányadóak. Emellett a magasabb presztízsű kategóriákban – ahol a vezetési élmény, a járműdizájn és brandimage valamint a jármű értékállósága a fő döntési kritérium – továbbra is meghatározó szereplők vagyunk. Ezekhez szorosan kapcsolódik az innovációs képesség is, különösen a komplex, magas hozzáadott értékű megoldásoknál. Ugyanakkor három területen látható egyértelmű lemaradás: - az akkumulátortechnológia ipari léptékű fejlesztésében, - az önvezető funkciók gyors iterációjú fejlesztésében és piacosításában, valamint - a költséghatékony tömegtermelésben. A lemaradás okai sokrétűek, többek közt iparpolitikai, szabályozási, erőforrásbeli és sebességbeli különbség okozzák lemaradásunkat. Az autóiparban korábban világosabb volt, ki gyárt autót és ki szállít be hozzá alkatrészt. A szoftveresedés például a fejlett vezetéstámogató rendszerek (ADAS) vagy szoftvervezérelt autók (SDV) és az elektromos hajtás térnyerése miatt hogyan változik egy olyan cég szerepe, mint az Aumovio? Az OEM‑ek (Original Equipment Manufacturer – eredeti gyártó) lefelé terjeszkednek az értékláncban: egyre több szoftvert, elektronikai vezérlőegységet és komplett rendszert terveznek vagy akár gyártatnak saját irányítás alatt. Ezzel párhuzamosan a különböző szintű beszállítók, azaz az úgynevezett, Tier2 vagy Tier3 szereplők felfelé lépnek: például a chipgyártók már nemcsak processzorokat, hanem komplex rendszereket, SoC‑okat, szoftverstackeket és middleware‑t is szállítanak. https://app.nwtalks.hu/ A vezető beszállítók, a Tier1‑ek – mint az Aumovio – kulcsszerepe ebben a környezetben az innováció, a rendszerismeret és az integráció. Képesek vagyunk arra, hogy a gyorsan vál"
+      }
+    ],
+    "relevant": [
+      {
+        "source": "Telex",
+        "title": "Magyar Péter homályos ígéretet tett az ügynökaktákról, amivel akkor is csak nyerhetünk, ha végül csalódást okoz"
+      },
+      {
+        "source": "Telex",
+        "title": "Magyar Péter nem költözik kormányzati rezidenciába"
+      },
+      {
+        "source": "HVG",
+        "title": "„A Magyar Péter vezette kormány nem fog bezárkózni vastag falak mögé” – minisztereket kérdeztünk"
+      },
+      {
+        "source": "HVG",
+        "title": "Magyar Péter nem költözik be a kormányrezidenciára, és megtartja országjárós Skodáját hivatali autónak"
+      }
+    ]
+  },
+  "clusters": {
+    "initial": [
+      [
+        "Magyar Péter homályos ígéretet tett az ügynökaktákról, amivel akkor is csak nyerhetünk, ha végül csalódást okoz"
+      ],
+      [
+        "Magyar Péter nem költözik kormányzati rezidenciába"
+      ],
+      [
+        "„A Magyar Péter vezette kormány nem fog bezárkózni vastag falak mögé” – minisztereket kérdeztünk"
+      ],
+      [
+        "Magyar Péter nem költözik be a kormányrezidenciára, és megtartja országjárós Skodáját hivatali autónak"
+      ]
+    ],
+    "merged": [
+      [
+        "Magyar Péter homályos ígéretet tett az ügynökaktákról, amivel akkor is csak nyerhetünk, ha végül csalódást okoz"
+      ],
+      [
+        "Magyar Péter nem költözik kormányzati rezidenciába"
+      ],
+      [
+        "„A Magyar Péter vezette kormány nem fog bezárkózni vastag falak mögé” – minisztereket kérdeztünk"
+      ],
+      [
+        "Magyar Péter nem költözik be a kormányrezidenciára, és megtartja országjárós Skodáját hivatali autónak"
+      ]
+    ]
+  },
+  "summaries": [
+    {
+      "cluster_index": 1,
+      "summary": "- **Magyar Péter** ígérete szerint **2026. április 23-án** nyitná meg az ügynökaktákat.\n- A **Tisza-kormány** alatt ez a **első ígéret** erre a témára.\n- Magyar Péter **október 22-re** tűzte ki a határidőt az ügynökakták megnyitásához.\n- Ez az első lépés lehet a magyar politikatörténet 36 éves kutyakomédiájának a végét jelentené.\n- Gulyás Gergely szerint **az ügynökakták nem léteznek**."
+    },
+    {
+      "cluster_index": 2,
+      "summary": "- **Magyar Péter** nem költözik kormányzati rezidenciába.\n- **Kocsija**: Miniszterelnöki szolgálati gépkocsiként egy kék Škoda SUPERB-t használ.\n- **Lakása**: Marad a gyermekeivel együtt lakó budai házban.\n- **Eskütétel**: Az első Tisza-kormány miniszterei, köztük Magyar Péter, letették esküjüket az Országgyűlés keddi ülésén."
+    },
+    {
+      "cluster_index": 3,
+      "summary": "- Magyar Péter vezette kormány megalakulása óta három nap telt el.\n- A kormányeredeti miniszterek között Gajdos László, Radnai Márk, Kármán András, Tanács Zoltán és Bóna Szabolcs.\n- Az új kormány nyitott lesz az állampolgárok felé, nem bezárkózik vastag falak mögé.\n- A civileknek lehetőségei lesznek a véleményük kifejezésére."
+    },
+    {
+      "cluster_index": 4,
+      "summary": "- Magyar Péter marad otthon, miniszterelnökként is, és nem költözik be a kormányrezidenciába.\n- A gyermekei miatt döntött úgy, hogy ott marad, ahol ők otthon vannak.\n- Miniszterelnöki szolgálati gépkocsiként az országjáráson már megismert kék Škoda SUPERB-t használja.\n- Ez az autó korábban miniszteri szintű jármű volt.\n- Magyar Péter Facebookon jelentette be ezt a döntését szerdán."
+    }
+  ]
+}

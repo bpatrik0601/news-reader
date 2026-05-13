@@ -1,0 +1,5 @@
+feedparser
+pydantic
+requests
+pyyaml
+trafilatura

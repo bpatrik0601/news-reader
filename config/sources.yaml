@@ -1,0 +1,17 @@
+topic:
+  query: "OpenAI"
+
+fetch:
+  max_articles_per_source: 10
+  max_total_articles: 50
+  lookback_hours: 24
+
+sources:
+  - name: Telex
+    rss: https://telex.hu/rss
+  - name: HVG
+    rss: https://hvg.hu/rss
+#  - name: AP News
+#    rss: https://rss.dw.com/rdf/rss-en-all
+#  - name: Al Jazeera
+#    rss: https://www.aljazeera.com/xml/rss/all.xml
