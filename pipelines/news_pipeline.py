@@ -57,6 +57,8 @@ class NewsPipeline:
         # --------------------------------------------------
         # 1. FETCH
         # --------------------------------------------------
+        self.logger.step("1. lépés", "Hírek gyűjtése az interneten --> cikkek lekérése a forrásokból.")
+        
         articles: list[Article] = self.source_agent.fetch(
             sources=config["sources"],
             max_per_source=config["fetch"]["max_articles_per_source"],
@@ -82,6 +84,8 @@ class NewsPipeline:
         # --------------------------------------------------
         # 2. RELEVANCE
         # --------------------------------------------------
+        self.logger.step("2. lépés", f"Relevancia-szűrés --> releváns cikkek kiválasztása a témához : {topic}.")
+        
         relevant_articles: list[Article] = []
 
         print("\n[Pipeline] Starting relevance filtering")
@@ -115,6 +119,7 @@ class NewsPipeline:
         # --------------------------------------------------
         # 3. CLUSTERING
         # --------------------------------------------------
+        self.logger.step("3. lépés", "Klaszterezés --> hasonló hírek csoportositása.")
         print("\n[Pipeline] Starting clustering")
 
         initial_clusters: list[list[Article]] = self.cluster_agent.cluster(
@@ -135,6 +140,7 @@ class NewsPipeline:
         # --------------------------------------------------
         # 3b. CLUSTER MERGE
         # --------------------------------------------------
+        self.logger.step("3b. lépés", "\'Mördzsölés\' --> csoportok osszevonása, ha ugyanarról szólnak.")
         print("\n[Pipeline] Starting cluster merge")
 
         clusters: list[list[Article]]
@@ -171,6 +177,8 @@ class NewsPipeline:
         # --------------------------------------------------
         # 4. SUMMARY
         # --------------------------------------------------
+        self.logger.step("4. lépés", "Összefoglaló készítése --> releváns cikkek rövid összefoglalása.")
+
         print("\n[Pipeline] Generating summaries")
 
         summaries: list[str] = []
