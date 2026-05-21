@@ -132,11 +132,19 @@ class NewsPipeline:
         # --------------------------------------------------
         print("\n[Pipeline] Starting cluster merge")
 
-        clusters: list[list[Article]] = self.cluster_merge_agent.merge(
+        clusters: list[list[Article]]
+        merge_performed: bool
+
+        clusters, merge_performed = self.cluster_merge_agent.merge(
             initial_clusters, topic
         )
 
-        snapshot["clusters"]["merge_performed"] = clusters != initial_clusters
+        snapshot["clusters"]["merge_performed"] = merge_performed
+
+        if merge_performed:
+            print("Az AI összevont néhány hasonló témájú cikkcsoportot.")
+        else:
+            print("Nem talált olyan csoportokat, amiket össze kellett volna vonni.")
 
         if snapshot["clusters"]["merge_performed"]:
             print("[Pipeline] Cluster merge resulted in changes.")

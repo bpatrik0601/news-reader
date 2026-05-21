@@ -22,13 +22,15 @@ class ClusterMergeAgent:
         self.llm = llm_client
         self.title_similarity_gate = title_similarity_gate
         self.number_overlap_gate = number_overlap_gate
-
-    def merge(self, clusters: List[List[Article]], topic: str) -> List[List[Article]]:
+    
+    def merge(self, clusters: List[List[Article]], topic: str) -> tuple[List[List[Article]], bool]:
         print("[ClusterMergeAgent] Starting cluster-merge")
         print(f"[ClusterMergeAgent] Input clusters: {len(clusters)}")
 
         if len(clusters) <= 1:
-            return clusters
+            return clusters, False
+
+        merged_any_global = False
 
         merged_any = True
         while merged_any:
@@ -50,8 +52,11 @@ class ClusterMergeAgent:
                         print(f"[ClusterMergeAgent] → MERGED cluster {j+1} into cluster {i+1}")
                         clusters[i] = clusters[i] + clusters[j]
                         del clusters[j]
+
                         merged_any = True
                         # j stays the same index after deletion, so do not j += 1
+                        merged_any_global = True
+
                     else:
                         print(f"[ClusterMergeAgent] → NOT merged")
                         j += 1
@@ -59,7 +64,7 @@ class ClusterMergeAgent:
                 i += 1
 
         print(f"[ClusterMergeAgent] Merge finished | output clusters: {len(clusters)}")
-        return clusters
+        return clusters, merged_any_global
 
     # --------------------------
     # Prefilter (cheap)
