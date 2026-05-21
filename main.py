@@ -30,12 +30,17 @@ def main():
         type=str,
         help="Topic to filter news by (overrides config topic.query)",
     )
+    parser.add_argument(
+        "--demo",
+        action="store_true",
+        help="Enable step-by-step demo output with explanations",
+    )
     args = parser.parse_args()
 
     config = load_config()
     topic = resolve_topic(config, args.topic)
 
-    pipeline = NewsPipeline()
+    pipeline = NewsPipeline(demo=args.demo)
     pipeline.run(config=config, topic=topic)
 
 
