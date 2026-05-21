@@ -195,7 +195,7 @@ ollama run mistral-nemo:12b
 ollama serve &
 ```
 
-### 3.3 Python 3.8+ telepítése
+### 3.3 Python 3.10+ telepítése
 
 #### Windows
 
@@ -318,7 +318,7 @@ python main.py
 
 ### 4.2 Egyedi topic-kal futtatás
 
-Egy adott tema miatt futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
+Egy adott téma miatt futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
 
 #### Windows
 
@@ -390,6 +390,71 @@ A projekt futása alatt látni fogsz:
   
 [Pipeline] Snapshot saved: data/snapshots/2026-05-13_14-30-22.json
 ```
+
+### 4.5 Demo mód és érthető AI működés
+A projekt támogat egy speciális demo módot, amely vizuálisan bemutatja, hogyan dolgozik egy több-ügynökös (agentic) AI rendszer.
+Ez különösen hasznos prezentációkhoz vagy oktatási célokra.
+
+Demo futtatása: 
+- `--demo`: Bekapcsolja a demo módot, amely vizuális elemekkel mutatja be az ügynökök működését.
+
+Demo szintek (--level)
+A pipeline különböző komplexitási szinteken futtatható:
+
+Level 1 – Egyszerű mód
+```Command Prompt / Windows Powershell
+python main.py --demo --level 1 --topic "AI"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Egyetlen összefoglaló készítés
+
+
+Level 2 – Közepes mód (csoportosítással)
+```Command Prompt / Windows Powershell
+python main.py --demo --level 2 --topic "AI"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Hasonló hírek csoportosítása
+- Összefoglalók csoportonként
+
+
+Level 3 – Teljes agentic mód (összevonással)
+```Command Prompt / Windows Powershell
+python main.py --demo --level 3 --topic "AI"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Klaszterezés
+- Csoportok összevonása (LLM döntéssel!)
+- Összefoglalók
+Ez a teljes rendszer, több AI „ügynök” együttműködésével.
+
+- Mit figyeljünk meg a demo során?
+A demo során az alábbi AI viselkedések figyelhetők meg:
+ - Döntéshozatal (releváns vs nem releváns cikkek);
+ - Csoportosítás (hasonló hírek felismerése);
+ - Összevonás (ugyanarról az eseményről szóló csoportok összeolvasztása);
+ - Összefoglalás (lényeg kiemelése természetes nyelven).
+
+- Miért „agentic” ez a rendszer?
+A klasszikus AI rendszerek általában egy lépésben válaszolnak.
+Ezen a projekt keretein belül viszont:
+ - egy célt kap (pl. "AI hírek összegyűjtése")
+ - több lépésben dolgozik
+ - különböző ügynököket használ
+ - és döntéseket hoz minden lépésben
+Ezért nevezhető agentic AI rendszernek.
+
+
+Egy gyors összehasonlítás:
+
+- 💬 Generatív AI: „Írj összefoglalót erről a cikkről”;
+- 🤖 Agentic AI:
+„Keress cikkeket → válaszd ki a relevánsakat → csoportosítsd → foglald össze”.
+
+Az agentic rendszer tehát nem csak válaszol, hanem feladatot végez el.
 
 ---
 
