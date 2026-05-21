@@ -123,6 +123,29 @@ class NewsPipeline:
             for a in relevant_articles
         ]
 
+        
+        # LEVEL 1 – egyszerű mód
+        if self.level == 1:
+            self.logger.info("Egyszerű mód: csak releváns hírek összefoglalása")
+
+            if not relevant_articles:
+                print("Nincs releváns cikk.")
+                return []
+
+            summary = self.summary_agent.summarize(relevant_articles, topic)
+
+            print("\n📝 Összefoglaló:")
+            print(summary)
+
+            snapshot["summaries"].append({
+                "cluster_index": 1,
+                "summary": summary,
+            })
+
+            save_snapshot(snapshot)
+
+            return [summary]
+
         time.sleep(1)
 
         # --------------------------------------------------
@@ -135,10 +158,12 @@ class NewsPipeline:
             relevant_articles
         )
 
+        # summary logger
+        self.logger.info(f"{len(cluster)} cikk tartozik ebbe a csoportba.")
+        
         print(f"\n[Pipeline] Initial clusters | count={len(initial_clusters)}")
         for idx, cluster in enumerate(initial_clusters, start=1):
             print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
-            self.logger.info(f"{len(cluster)} cikk tartozik ebbe a csoportba.")
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
@@ -156,9 +181,18 @@ class NewsPipeline:
         clusters: list[list[Article]]
         merge_performed: bool
 
-        clusters, merge_performed = self.cluster_merge_agent.merge(
-            initial_clusters, topic
-        )
+        # LEVEL 2 → nincs merge
+        if self.level == 2:
+            self.logger.info("Merge kihagyva – közepes mód")
+
+            clusters = initial_clusters
+            merge_performed = False
+
+        # LEVEL 3 → teljes pipeline
+        elif self.level == 3:
+            clusters, merge_performed = self.cluster_merge_agent.merge(
+                initial_clusters, topic
+            )
 
         snapshot["clusters"]["merge_performed"] = merge_performed
 
@@ -169,10 +203,11 @@ class NewsPipeline:
             print("Nem talált olyan csoportokat, amiket össze kellett volna vonni.")
             self.logger.decision("Nem talált olyan csoportokat, amiket össze kellett volna vonni.")
 
+        # summary logger
+        self.logger.info(f"{len(clusters)} végleges témakört azonosított az AI.")
 
         for idx, cluster in enumerate(clusters, start=1):
             print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
-            self.logger.info(f"{len(clusters)} végleges témakört azonosított az AI.")
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
