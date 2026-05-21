@@ -9,6 +9,8 @@ from agents.summary_agent import SummaryAgent
 from agents.ollama_client import OllamaClient
 
 from utils.snapshot import save_snapshot
+
+import time
 from utils.demo_logger import DemoLogger
 
 from models.article import Article
@@ -81,6 +83,8 @@ class NewsPipeline:
             for i, a in enumerate(articles)
         ]
 
+        time.sleep(1)  # Szünet a lépések között, hogy jobban látszódjon a demo során
+
         # --------------------------------------------------
         # 2. RELEVANCE
         # --------------------------------------------------
@@ -99,9 +103,11 @@ class NewsPipeline:
 
             if decision:
                 print("[Pipeline] → Accepted as relevant")
+                self.logger.decision("Ez a cikk relevánsnak tűnik a témához, ezért belevesszük a további feldolgozásba.")
                 relevant_articles.append(article)
             else:
                 print("[Pipeline] → Rejected as not relevant")
+                self.logger.decision("Ez a cikk nem tűnik elég relevánsnak a témához, ezért kihagyjuk.")
 
         print(
             f"\n[Pipeline] Relevance filtering finished | "
@@ -116,6 +122,8 @@ class NewsPipeline:
             for a in relevant_articles
         ]
 
+        time.sleep(1)
+
         # --------------------------------------------------
         # 3. CLUSTERING
         # --------------------------------------------------
@@ -129,6 +137,7 @@ class NewsPipeline:
         print(f"\n[Pipeline] Initial clusters | count={len(initial_clusters)}")
         for idx, cluster in enumerate(initial_clusters, start=1):
             print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
+            self.logger.info(f"{len(cluster)} cikk tartozik ebbe a csoportba.")
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
@@ -154,17 +163,15 @@ class NewsPipeline:
 
         if merge_performed:
             print("Az AI összevont néhány hasonló témájú cikkcsoportot.")
+            self.logger.decision("Az AI összevont néhány hasonló témájú cikkcsoportot.")
         else:
             print("Nem talált olyan csoportokat, amiket össze kellett volna vonni.")
+            self.logger.decision("Nem talált olyan csoportokat, amiket össze kellett volna vonni.")
 
-        if snapshot["clusters"]["merge_performed"]:
-            print("[Pipeline] Cluster merge resulted in changes.")
-            print(f"\n[Pipeline] Clusters after merge | count={len(clusters)}")
-        else:
-            print("[Pipeline] No cluster merges performed.")
 
         for idx, cluster in enumerate(clusters, start=1):
             print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
+            self.logger.info(f"{len(clusters)} végleges témakört azonosított az AI.")
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
@@ -173,6 +180,7 @@ class NewsPipeline:
             for cluster in clusters
         ]
 
+        time.sleep(1)
 
         # --------------------------------------------------
         # 4. SUMMARY
