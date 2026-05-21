@@ -17,10 +17,11 @@ from models.article import Article
 
 
 class NewsPipeline:
-    def __init__(self, demo: bool = False):
+    def __init__(self, demo: bool = False, level: int = 2):
         llm_client = OllamaClient()
 
         self.demo = demo
+        self.level = level
         self.logger = DemoLogger(demo)
 
         self.source_agent = SourceAgent()
