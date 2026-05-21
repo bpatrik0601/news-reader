@@ -9,12 +9,17 @@ from agents.summary_agent import SummaryAgent
 from agents.ollama_client import OllamaClient
 
 from utils.snapshot import save_snapshot
+from utils.demo_logger import DemoLogger
+
 from models.article import Article
 
 
 class NewsPipeline:
-    def __init__(self):
+    def __init__(self, demo: bool = False):
         llm_client = OllamaClient()
+
+        self.demo = demo
+        self.logger = DemoLogger(demo)
 
         self.source_agent = SourceAgent()
         self.relevance_agent = RelevanceAgent(llm_client)
