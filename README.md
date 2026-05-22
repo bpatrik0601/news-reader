@@ -318,7 +318,7 @@ python main.py
 
 ### 4.2 Egyedi topic-kal futtatás
 
-Egy adott tema miatt futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
+Egy adott téma miatt futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
 
 #### Windows
 
@@ -340,7 +340,27 @@ python main.py --topic "Tesla"
 
 A `--topic` paraméter felülírja a `config/sources.yaml` beállítást ideiglenesen.
 
-### 4.3 Snapshot-ból való visszajátszás (Replay)
+---
+
+### 4.3 Több kulcsszavas figyelés
+
+A rendszer támogatja több kulcsszó egyidejű figyelését, amelyek alapján a releváns hírek kiválasztása történik.
+
+#### Példa konfiguráció
+
+A `config/sources.yaml` fájlban több kulcsszót adhatsz meg:
+
+```yaml
+topic:
+  queries:
+    - "AI"
+    - "Tesla"
+    - "OpenAI"
+    - "robotika"
+    - "játékfejlesztés"
+```
+
+### 4.4 Snapshot-ból való visszajátszás (Replay)
 
 A projekt minden futás után menti a pillanatképet (`snapshot`) a `data/snapshots/` mappába (timestamp-kel).
 
@@ -365,7 +385,7 @@ python replay_snapshot.py data/snapshots/2026-05-13_09-30-05.json
 2. Újra futtatja a szűrést, klaszterezést, összefoglalást
 3. Az LLM újra feldolgozza az adatokat (hasznos a teszteléshez)
 
-### 4.4 A futás kimenetei
+### 4.5 A futás kimenetei
 
 A projekt futása alatt látni fogsz:
 

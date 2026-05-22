@@ -1,6 +1,7 @@
 import argparse
 import yaml
 
+import config
 from pipelines.news_pipeline import NewsPipeline
 
 
@@ -14,9 +15,13 @@ def resolve_topic(config: dict, cli_topic: str | None) -> str:
         print(f"[Main] Using topic from CLI: {cli_topic}")
         return cli_topic
 
-    if "topic" in config and "query" in config["topic"]:
-        print(f"[Main] Using topic from config: {config['topic']['query']}")
-        return config["topic"]["query"]
+    topic_cfg = config.get("topic", {})
+
+    if "queries" in topic_cfg:
+        return topic_cfg["queries"]
+
+    if "query" in topic_cfg:
+        return topic_cfg["query"]
 
     raise RuntimeError(
         "No topic specified. Use --topic or define topic.query in config."
