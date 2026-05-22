@@ -4,6 +4,54 @@
 
 A projekt **lokális LLM-et** használ az **Ollama** futtatókörnyezeten keresztül (nincs felhős API-kulcs, teljesen privát, online működésre nincs szükség az LLM után).
 
+- Agentic AI architektúrák – milyen típusok léteznek?
+Az agentic AI rendszerek többféle felépítésben létezhetnek. 
+**Ez a projekt egy pipeline típusú megközelítést használ, de más modellek is elterjedtek**.
+
+1. Pipeline
+ - Lépések egymás után futnak;
+ - Minden agent egy adott feladatot végez;
+ - Determinisztikus (fix sorrend).
+
+Példa:
+*Fetch → Relevance → Cluster → Merge → Summary*
+
+Ez a legegyszerűbb és legjobban bemutatható forma.
+
+
+2. Orchestrator + agentek
+ - Van egy irányító agent;
+ - Ő osztja szét a feladatokat;
+ - Figyeli az eredményeket.
+
+Az orchestrator célja:
+ - feladatok kiosztása;
+ - állapot figyelése;
+ - végső output összerakása.
+
+
+3. Planner + Executor;
+ - Planner → eldönti a lépéseket;
+ - Executor → végrehajtja.
+
+Példa:
+*“Először keresek → aztán szűrök → aztán összegzek”*
+
+
+4. Tool-using agent
+ - Egy agent van;
+ - különböző eszközöket használ (RSS, search, LLM);
+ - dinamikusan dönt, mit használ.
+
+
+5. Multi-agent rendszer (komplex)
+ - több agent együttműködik;
+ - iterálnak → visszacsatolás (feedback loop);
+ - nem csak pipeline, hanem “körkörös” működés (mint GPS).
+
+TL;DR:
+Ez a projekt pipeline típusú agentic rendszer, de más megközelítések is léteznek (orchestrator, planner, multi-agent loop).
+
 ---
 
 ## 0) Gyors indulás (TL;DR)
@@ -412,7 +460,7 @@ python main.py --demo --level 1 --topic "AI"
 
 Level 2 – Közepes mód (csoportosítással)
 ```Command Prompt / Windows Powershell
-python main.py --demo --level 2 --topic "AI"
+python main.py --demo --level 2 --topic "OpenAI"
 ```
 - Hírek begyűjtése
 - Relevancia-szűrés
@@ -422,7 +470,7 @@ python main.py --demo --level 2 --topic "AI"
 
 Level 3 – Teljes agentic mód (összevonással)
 ```Command Prompt / Windows Powershell
-python main.py --demo --level 3 --topic "AI"
+python main.py --demo --level 3 --topic "technology"
 ```
 - Hírek begyűjtése
 - Relevancia-szűrés
