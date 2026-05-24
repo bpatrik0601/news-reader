@@ -26,6 +26,15 @@ def remove_duplicates(lines: list[str]) -> list[str]:
             seen.add(l)
     return result
 
+report_output = []
+def log_and_collect(text: str):
+    print(text)
+    report_output.append(text)
+
+def export_report(report_output):
+    full_output = "\n".join(report_output)
+    with open("report_output.txt", "w", encoding="utf-8") as f:
+        f.write(full_output)
 
 class NewsPipeline:
     def __init__(self, demo: bool = False, level: int = 2):
@@ -65,8 +74,9 @@ class NewsPipeline:
             "summaries": [],
         }
 
-        print(f"\n[Pipeline] Starting run {run_id}")
-        print(f"[Pipeline] Topic: {topic}")
+        if not self.demo:
+            print(f"\n[Pipeline] Starting run {run_id}")
+            print(f"[Pipeline] Topic: {topic}")
 
         # --------------------------------------------------
         # 1. FETCH
@@ -79,8 +89,10 @@ class NewsPipeline:
             max_total=config["fetch"]["max_total_articles"],
             lookback_hours=config["fetch"]["lookback_hours"],
         )
+        if not self.demo:
+            print(f"[Pipeline] Fetched {len(articles)} articles")
+            print("\n[Pipeline] Fetched articles:")
 
-        print("\n[Pipeline] Fetched articles:")
         for idx, article in enumerate(articles, start=1):
             print(f"  {idx}. [{article.source}] {article.title}")
 
@@ -107,11 +119,15 @@ class NewsPipeline:
         
         relevant_articles: list[Article] = []
 
-        print("\n[Pipeline] Starting relevance filtering")
+        if not self.demo:
+            print("\n[Pipeline] Starting relevance filtering")
+        elif self.demo:
+            print("\n[Demo] Most az AI eldönti, mely cikkek relevánsak.")
 
         for idx, article in enumerate(articles, start=1):
-            print(f"\n[Pipeline] Relevance check {idx}/{len(articles)}")
-            print(f"[Pipeline] Title: {article.title}")
+            if not self.demo:
+                print(f"\n[Pipeline] Relevance check {idx}/{len(articles)}")
+                print(f"[Pipeline] Title: {article.title}")
 
             text = article.title + "\n\n" + article.content[:500]
             
@@ -125,17 +141,22 @@ class NewsPipeline:
             
             
             if decision:
-                print("[Pipeline] → Accepted as relevant")
+                if not self.demo:
+                    print("[Pipeline] → Accepted as relevant")
                 self.logger.decision("Ez a cikk relevánsnak tűnik a témához, ezért belevesszük a további feldolgozásba.")
                 relevant_articles.append(article)
             else:
-                print("[Pipeline] → Rejected as not relevant")
+                if not self.demo:
+                    print("[Pipeline] → Rejected as not relevant")
                 self.logger.decision("Ez a cikk nem tűnik elég relevánsnak a témához, ezért kihagyjuk.")
 
-        print(
-            f"\n[Pipeline] Relevance filtering finished | "
-            f"relevant_articles={len(relevant_articles)}"
-        )
+        if not self.demo:
+            print(
+                f"\n[Pipeline] Relevance filtering finished | "
+                f"relevant_articles={len(relevant_articles)}"
+            )
+        elif self.demo:
+            self.logger.info(f"\nA témához releváns cikkek kiválasztva. Az AI összesen {len(relevant_articles)} releváns cikket talált a témában.")
 
         snapshot["articles"]["relevant"] = [
             {
@@ -146,7 +167,8 @@ class NewsPipeline:
         ]
         # Fallback, ha nincs releváns cikk, hogy a pipeline ne omoljon össze, hanem szépen leálljon és mentse a snapshotot a demo kedvéért
         if not relevant_articles:
-            print("\n[Pipeline] Nincs releváns cikk a témában.")
+            if not self.demo:
+                print("\n[Pipeline] Nincs releváns cikk a témában.")
             self.logger.info("Az AI nem találtott releváns cikket ehhez a témához.")
             
             if self.demo:    
@@ -195,17 +217,23 @@ class NewsPipeline:
         # 3. CLUSTERING
         # --------------------------------------------------
         self.logger.step("3. lépés", "Klaszterezés --> hasonló hírek csoportositása.")
-        print("\n[Pipeline] Starting clustering")
+        if not self.demo:
+            print("\n[Pipeline] Starting clustering")
+        elif self.demo:
+            print("\n[Demo] A hasonló cikkek csoportosítása történik.")
 
         initial_clusters: list[list[Article]] = self.cluster_agent.cluster(
             relevant_articles
         )
         
-        
-        print(f"\n[Pipeline] Initial clusters | count={len(initial_clusters)}")
-        
+        if not self.demo:
+            print(f"\n[Pipeline] Initial clusters | count={len(initial_clusters)}")
+        if self.demo:
+            self.logger.info(f"\nAz AI a releváns cikkeket hasonlóság alapján csoportosította, hogy az egyes témaköröket elkülönítse egymástól. Ez segít abban, hogy a későbbi lépésekben fókuszáltabb elemzést és összefoglalást készíthessünk az egyes témakörökről.")
+
         for idx, cluster in enumerate(initial_clusters, start=1):
-            print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
+            if not self.demo:
+                print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
             self.logger.info(f"{len(cluster)} cikk tartozik ebbe a csoportba.")
             
             for article in cluster:
@@ -216,7 +244,8 @@ class NewsPipeline:
             for cluster in initial_clusters
         ]
         if not initial_clusters:
-            print("\n[Pipeline] Nem sikerült csoportosítani a cikkeket.")
+            if not self.demo:
+                print("\n[Pipeline] Nem sikerült csoportosítani a cikkeket.")
             self.logger.info("Nem volt elegendő adat a klaszterezéshez.")
 
             save_snapshot(snapshot)
@@ -226,7 +255,8 @@ class NewsPipeline:
         # 3b. CLUSTER MERGE
         # --------------------------------------------------
         self.logger.step("3b. lépés", "Összevonás --> csoportok összevonása, ha ugyanarról szólnak (azonos események felismerése).")
-        print("\n[Pipeline] Starting cluster merge")
+        if not self.demo:
+            print("\n[Pipeline] Starting cluster merge")
 
         clusters: list[list[Article]]
         merge_performed: bool
@@ -278,7 +308,10 @@ class NewsPipeline:
         # --------------------------------------------------
         self.logger.step("4. lépés", "Összefoglaló készítése --> releváns cikkek rövid összefoglalása.")
 
-        print("\n[Pipeline] Generating summaries")
+        if not self.demo:
+            print("\n[Pipeline] Generating summaries")
+        elif self.demo:
+            print("\n[Demo] Az AI most elemzi a cikkeket és összefoglalót készít.")
 
         summaries: list[str] = []
 
@@ -292,19 +325,19 @@ class NewsPipeline:
             print("=" * 60)
 
             if self.demo:
-                print(f"[Demo] Az AI feldolgozza a {idx}. csoporthoz tartozó cikkeket és összefoglalót készít.\n")
+                print(f"[Demo] Az AI feldolgozza a {idx}. csoporthoz tartozó cikkeket az összefoglaló készítéséhez.\n")
 
             # CIKKEK LISTÁZÁSA (riport jellegű)
             for article in cluster:
                 preview = article.content[:300] if article.content else ""
 
-                print(f"\nCím: {article.title}")
-                print(f"Forrás: {article.source}")
+                log_and_collect(f"\nCím: {article.title}")
+                log_and_collect(f"Forrás: {article.source}")
 
                 if hasattr(article, "published_at"):
-                    print(f"Időpont: {article.published_at}")
+                    log_and_collect(f"Időpont: {article.published_at}")
 
-                print(f"Rövid kivonat: {preview}...")
+                log_and_collect(f"Rövid kivonat: {preview}...")
 
             # AI összefoglaló
             print("\nAI összefoglaló:")
@@ -324,6 +357,11 @@ class NewsPipeline:
                 "cluster_index": idx,
                 "summary": clean_summary,
             })
+
+        # ==================================================
+        # FILE EXPORT
+        # ==================================================
+        self.export_report(report_output)
 
         # ==================================================
         # PIPELINE VÉGE – SNAPSHOT MENTÉS (FIXEN BENNE VAN)

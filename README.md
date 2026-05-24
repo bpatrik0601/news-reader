@@ -459,7 +459,6 @@ A projekt futása alatt látni fogsz:
 [Pipeline] Snapshot saved: data/snapshots/2026-05-13_14-30-22.json
 ```
 
-<<<<<<< HEAD
 ### 4.5 Demo mód és érthető AI működés
 A projekt támogat egy speciális demo módot, amely vizuálisan bemutatja, hogyan dolgozik egy több-ügynökös (agentic) AI rendszer.
 Ez különösen hasznos prezentációkhoz vagy oktatási célokra.
@@ -499,6 +498,7 @@ python main.py --demo --level 3 --topic "technology"
 - Csoportok összevonása (LLM döntéssel!)
 - Összefoglalók
 Ez a teljes rendszer, több AI „ügynök” együttműködésével.
+Ez a demo mód az összes lépést tartalmazza magyarázattal.
 
 - Mit figyeljünk meg a demo során?
 A demo során az alábbi AI viselkedések figyelhetők meg:
@@ -524,7 +524,6 @@ Egy gyors összehasonlítás:
 „Keress cikkeket → válaszd ki a relevánsakat → csoportosítsd → foglald össze”.
 
 Az agentic rendszer tehát nem csak válaszol, hanem feladatot végez el.
-=======
 ## Riport jellegű kimenet
 A rendszer a cikkeket strukturált formátumban jeleníti meg:
 - cím
@@ -533,7 +532,6 @@ A rendszer a cikkeket strukturált formátumban jeleníti meg:
 - AI-alapú összefoglaló
 
 Ez a klasszikus médiafigyelési riportokhoz hasonló kimenetet biztosít.
->>>>>>> origin/develop
 
 ---
 
@@ -1081,4 +1079,3 @@ Ha hibára futtalálsz, tartalmazza:
 **Sikeresen telepítettél? Gratulálunk! 🎉**
 
 Kezdj a `python main.py` paranccsal, és nézd meg az első futást!
-
