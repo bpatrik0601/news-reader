@@ -1,5 +1,11 @@
 topic:
-  query: "OpenAI"
+  queries:
+    - "AI"
+    - "Tesla"
+    - "OpenAI"
+    - "robotika"
+    - "játékfejlesztés"
+
 
 fetch:
   max_articles_per_source: 10

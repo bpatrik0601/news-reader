@@ -78,6 +78,9 @@ class NewsPipeline:
         # --------------------------------------------------
         # 2. RELEVANCE
         # --------------------------------------------------
+        if self.demo and isinstance(topic, list):
+            self.logger.info(f"Figyelt kulcsszavak: {', '.join(topic)}")
+        
         relevant_articles: list[Article] = []
 
         print("\n[Pipeline] Starting relevance filtering")
@@ -87,8 +90,16 @@ class NewsPipeline:
             print(f"[Pipeline] Title: {article.title}")
 
             text = article.title + "\n\n" + article.content[:500]
-            decision = self.relevance_agent.is_relevant(text, topic)
-
+            
+            if isinstance(topic, list):
+                decision = any(
+                    self.relevance_agent.is_relevant(text, t)
+                    for t in topic
+                )
+            else:
+                decision = self.relevance_agent.is_relevant(text, topic)            
+            
+            
             if decision:
                 print("[Pipeline] → Accepted as relevant")
                 relevant_articles.append(article)
