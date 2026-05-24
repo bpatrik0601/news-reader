@@ -396,7 +396,7 @@ A rendszer támogatja több kulcsszó egyidejű figyelését, amelyek alapján a
 
 #### Példa konfiguráció
 
-A `config/sources.yaml` fájlban több kulcsszót adhatsz meg:
+A `config/sources.yaml` fájlban több kulcsszót adhatsz meg, tetszés szerint:
 
 ```yaml
 topic:
