@@ -1,4 +1,5 @@
 from datetime import datetime
+from importlib.resources.readers import remove_duplicates
 from typing import Any
 
 from agents.source_agent import SourceAgent
@@ -99,7 +100,12 @@ class NewsPipeline:
         # --------------------------------------------------
         # 2. RELEVANCE
         # --------------------------------------------------
+<<<<<<< HEAD
         self.logger.step("2. lépés", f"Relevancia-szűrés --> releváns cikkek kiválasztása a témához : {topic}.")
+=======
+        if self.demo and isinstance(topic, list):
+            self.logger.info(f"Figyelt kulcsszavak: {', '.join(topic)}")
+>>>>>>> origin/develop
         
         relevant_articles: list[Article] = []
 
@@ -110,8 +116,16 @@ class NewsPipeline:
             print(f"[Pipeline] Title: {article.title}")
 
             text = article.title + "\n\n" + article.content[:500]
-            decision = self.relevance_agent.is_relevant(text, topic)
-
+            
+            if isinstance(topic, list):
+                decision = any(
+                    self.relevance_agent.is_relevant(text, t)
+                    for t in topic
+                )
+            else:
+                decision = self.relevance_agent.is_relevant(text, topic)            
+            
+            
             if decision:
                 print("[Pipeline] → Accepted as relevant")
                 self.logger.decision("Ez a cikk relevánsnak tűnik a témához, ezért belevesszük a további feldolgozásba.")
@@ -271,13 +285,36 @@ class NewsPipeline:
         summaries: list[str] = []
 
         for idx, cluster in enumerate(clusters, start=1):
+<<<<<<< HEAD
             if not self.demo:
                 print(f"\n[Pipeline] Summary for cluster {idx}")
+=======
+
+            print("\n" + "=" * 60)
+            print(f"📰 {idx}. témakör")
+            print("=" * 60)
+
+            # 📄 CIKKEK LISTÁZÁSA (riport jellegű)
+            for article in cluster:
+                preview = article.content[:300] if article.content else ""
+
+                print(f"\n📌 Cím: {article.title}")
+                print(f"📡 Forrás: {article.source}")
+
+                if hasattr(article, "published_at"):
+                    print(f"🕒 Időpont: {article.published_at}")
+
+                print(f"📄 Rövid kivonat: {preview}...")
+
+            # 🧠 AI összefoglaló
+            print("\n🧠 AI összefoglaló:")
+>>>>>>> origin/develop
 
             if self.demo:
                 print(f"[Demo] Most az AI megpróbál egy összefoglalót készíteni a {idx}. csoporthoz tartozó cikkekből.")
                 
             summary = self.summary_agent.summarize(cluster, topic)
+<<<<<<< HEAD
             
             # deduplikálás
             lines = [l.strip() for l in summary.split("\n") if l.strip()]
@@ -287,6 +324,17 @@ class NewsPipeline:
             summaries.append(clean_summary)
 
             print(clean_summary)
+=======
+
+            # ✅ deduplikálás
+            lines = [l.strip() for l in summary.split("\n") if l.strip()]
+            lines = remove_duplicates(lines)
+            clean_summary = "\n".join(lines)
+
+            print(clean_summary)
+
+            summaries.append(clean_summary)
+>>>>>>> origin/develop
 
             snapshot["summaries"].append({
                 "cluster_index": idx,
