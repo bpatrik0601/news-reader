@@ -9,21 +9,26 @@ class SummaryAgent:
     Creates a short summary for a cluster of related articles.
     """
 
-    def __init__(self, llm_client: LLMClient):
+    def __init__(self, llm_client: LLMClient, demo: bool = False):
         self.llm = llm_client
+        self.demo = demo
 
     def summarize(self, cluster: List[Article], topic: str) -> str:
-        print("[SummaryAgent] Starting summary")
-        print(f"[SummaryAgent] Topic: {topic}")
-        print(f"[SummaryAgent] Articles in cluster: {len(cluster)}")
+        if not self.demo:
+            print("[SummaryAgent] Starting summary")
+            print(f"[SummaryAgent] Topic: {topic}")
+            print(f"[SummaryAgent] Articles in cluster: {len(cluster)}")
 
         prompt = self._build_prompt(cluster, topic)
 
-        print("[SummaryAgent] Sending prompt to Ollama")
+        if not self.demo:
+            print("[SummaryAgent] Sending prompt to Ollama")
+        
         response = self.llm.complete(prompt)
-
-        print("[SummaryAgent] Raw response:")
-        print(response)
+        
+        if not self.demo:
+            print("[SummaryAgent] Raw response:")
+            print(response)
 
         return response.strip()
 

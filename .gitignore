@@ -49,4 +49,4 @@ models/*.safetensors
 # Secrets / local config
 # ----------------------------------
 .env
-.env.*
+.env.*__pycache__/

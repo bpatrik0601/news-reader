@@ -4,6 +4,54 @@
 
 A projekt **lokális LLM-et** használ az **Ollama** futtatókörnyezeten keresztül (nincs felhős API-kulcs, teljesen privát, online működésre nincs szükség az LLM után).
 
+- Agentic AI architektúrák – milyen típusok léteznek?
+Az agentic AI rendszerek többféle felépítésben létezhetnek. 
+**Ez a projekt egy pipeline típusú megközelítést használ, de más modellek is elterjedtek**.
+
+1. Pipeline
+ - Lépések egymás után futnak;
+ - Minden agent egy adott feladatot végez;
+ - Determinisztikus (fix sorrend).
+
+Példa:
+*Fetch → Relevance → Cluster → Merge → Summary*
+
+Ez a legegyszerűbb és legjobban bemutatható forma.
+
+
+2. Orchestrator + agentek
+ - Van egy irányító agent;
+ - Ő osztja szét a feladatokat;
+ - Figyeli az eredményeket.
+
+Az orchestrator célja:
+ - feladatok kiosztása;
+ - állapot figyelése;
+ - végső output összerakása.
+
+
+3. Planner + Executor;
+ - Planner → eldönti a lépéseket;
+ - Executor → végrehajtja.
+
+Példa:
+*“Először keresek → aztán szűrök → aztán összegzek”*
+
+
+4. Tool-using agent
+ - Egy agent van;
+ - különböző eszközöket használ (RSS, search, LLM);
+ - dinamikusan dönt, mit használ.
+
+
+5. Multi-agent rendszer (komplex)
+ - több agent együttműködik;
+ - iterálnak → visszacsatolás (feedback loop);
+ - nem csak pipeline, hanem “körkörös” működés (mint GPS).
+
+TL;DR:
+Ez a projekt pipeline típusú agentic rendszer, de más megközelítések is léteznek (orchestrator, planner, multi-agent loop).
+
 ---
 
 ## 0) Gyors indulás (TL;DR)
@@ -195,7 +243,7 @@ ollama run mistral-nemo:12b
 ollama serve &
 ```
 
-### 3.3 Python 3.8+ telepítése
+### 3.3 Python 3.10+ telepítése
 
 #### Windows
 
@@ -348,7 +396,7 @@ A rendszer támogatja több kulcsszó egyidejű figyelését, amelyek alapján a
 
 #### Példa konfiguráció
 
-A `config/sources.yaml` fájlban több kulcsszót adhatsz meg:
+A `config/sources.yaml` fájlban több kulcsszót adhatsz meg, tetszés szerint:
 
 ```yaml
 topic:
@@ -411,6 +459,72 @@ A projekt futása alatt látni fogsz:
 [Pipeline] Snapshot saved: data/snapshots/2026-05-13_14-30-22.json
 ```
 
+<<<<<<< HEAD
+### 4.5 Demo mód és érthető AI működés
+A projekt támogat egy speciális demo módot, amely vizuálisan bemutatja, hogyan dolgozik egy több-ügynökös (agentic) AI rendszer.
+Ez különösen hasznos prezentációkhoz vagy oktatási célokra.
+
+Demo futtatása: 
+- `--demo`: Bekapcsolja a demo módot, amely vizuális elemekkel mutatja be az ügynökök működését.
+
+Demo szintek (--level)
+A pipeline különböző komplexitási szinteken futtatható:
+
+Level 1 – Egyszerű mód
+```Command Prompt / Windows Powershell
+python main.py --demo --level 1 --topic "AI"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Egyetlen összefoglaló készítés
+
+
+Level 2 – Közepes mód (csoportosítással)
+```Command Prompt / Windows Powershell
+python main.py --demo --level 2 --topic "OpenAI"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Hasonló hírek csoportosítása
+- Összefoglalók csoportonként
+
+
+Level 3 – Teljes agentic mód (összevonással)
+```Command Prompt / Windows Powershell
+python main.py --demo --level 3 --topic "technology"
+```
+- Hírek begyűjtése
+- Relevancia-szűrés
+- Klaszterezés
+- Csoportok összevonása (LLM döntéssel!)
+- Összefoglalók
+Ez a teljes rendszer, több AI „ügynök” együttműködésével.
+
+- Mit figyeljünk meg a demo során?
+A demo során az alábbi AI viselkedések figyelhetők meg:
+ - Döntéshozatal (releváns vs nem releváns cikkek);
+ - Csoportosítás (hasonló hírek felismerése);
+ - Összevonás (ugyanarról az eseményről szóló csoportok összeolvasztása);
+ - Összefoglalás (lényeg kiemelése természetes nyelven).
+
+- Miért „agentic” ez a rendszer?
+A klasszikus AI rendszerek általában egy lépésben válaszolnak.
+Ezen a projekt keretein belül viszont:
+ - egy célt kap (pl. "AI hírek összegyűjtése")
+ - több lépésben dolgozik
+ - különböző ügynököket használ
+ - és döntéseket hoz minden lépésben
+Ezért nevezhető agentic AI rendszernek.
+
+
+Egy gyors összehasonlítás:
+
+- 💬 Generatív AI: „Írj összefoglalót erről a cikkről”;
+- 🤖 Agentic AI:
+„Keress cikkeket → válaszd ki a relevánsakat → csoportosítsd → foglald össze”.
+
+Az agentic rendszer tehát nem csak válaszol, hanem feladatot végez el.
+=======
 ## Riport jellegű kimenet
 A rendszer a cikkeket strukturált formátumban jeleníti meg:
 - cím
@@ -419,6 +533,7 @@ A rendszer a cikkeket strukturált formátumban jeleníti meg:
 - AI-alapú összefoglaló
 
 Ez a klasszikus médiafigyelési riportokhoz hasonló kimenetet biztosít.
+>>>>>>> origin/develop
 
 ---
 
