@@ -391,6 +391,15 @@ A projekt futása alatt látni fogsz:
 [Pipeline] Snapshot saved: data/snapshots/2026-05-13_14-30-22.json
 ```
 
+## Riport jellegű kimenet
+A rendszer a cikkeket strukturált formátumban jeleníti meg:
+- cím
+- forrás
+- rövid kivonat (~300 karakter)
+- AI-alapú összefoglaló
+
+Ez a klasszikus médiafigyelési riportokhoz hasonló kimenetet biztosít.
+
 ---
 
 ## 5) Projekts tuktúra – Az ügynökök szót szerűen

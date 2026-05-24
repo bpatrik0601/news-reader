@@ -1,4 +1,5 @@
 from datetime import datetime
+from importlib.resources.readers import remove_duplicates
 from typing import Any
 
 from agents.source_agent import SourceAgent
@@ -163,16 +164,40 @@ class NewsPipeline:
         summaries: list[str] = []
 
         for idx, cluster in enumerate(clusters, start=1):
-            print(f"\n[Pipeline] Summary for cluster {idx}")
+
+            print("\n" + "=" * 60)
+            print(f"📰 {idx}. témakör")
+            print("=" * 60)
+
+            # 📄 CIKKEK LISTÁZÁSA (riport jellegű)
+            for article in cluster:
+                preview = article.content[:300] if article.content else ""
+
+                print(f"\n📌 Cím: {article.title}")
+                print(f"📡 Forrás: {article.source}")
+
+                if hasattr(article, "published_at"):
+                    print(f"🕒 Időpont: {article.published_at}")
+
+                print(f"📄 Rövid kivonat: {preview}...")
+
+            # 🧠 AI összefoglaló
+            print("\n🧠 AI összefoglaló:")
 
             summary = self.summary_agent.summarize(cluster, topic)
-            summaries.append(summary)
 
-            print(summary)
+            # ✅ deduplikálás
+            lines = [l.strip() for l in summary.split("\n") if l.strip()]
+            lines = remove_duplicates(lines)
+            clean_summary = "\n".join(lines)
+
+            print(clean_summary)
+
+            summaries.append(clean_summary)
 
             snapshot["summaries"].append({
                 "cluster_index": idx,
-                "summary": summary,
+                "summary": clean_summary,
             })
 
         # ==================================================
