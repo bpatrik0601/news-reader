@@ -12,12 +12,14 @@ class ClusterAgent:
     instead of character-based sequence matching.
     """
 
-    def __init__(self, similarity_threshold: float = 0.55):
+    def __init__(self, similarity_threshold: float = 0.55, verbose: bool = False):
         self.similarity_threshold = similarity_threshold
+        self.verbose = verbose
 
     def cluster(self, articles: List[Article]) -> List[List[Article]]:
-        print("[ClusterAgent] Starting clustering")
-        print(f"[ClusterAgent] Similarity threshold: {self.similarity_threshold}")
+        if self.verbose:
+            print("[ClusterAgent] Starting clustering")
+            print(f"[ClusterAgent] Similarity threshold: {self.similarity_threshold}")
 
         clusters: List[List[Article]] = []
 
@@ -29,22 +31,26 @@ class ClusterAgent:
                 cluster_repr = self._representation(cluster[0])
                 similarity = self._jaccard_similarity(article_repr, cluster_repr)
 
-                print("[ClusterAgent] Compare:")
-                print(f"  - '{article.title}'")
-                print(f"  - '{cluster[0].title}'")
-                print(f"  → similarity={similarity:.2f}")
+                if self.verbose:
+                    print("[ClusterAgent] Compare:")
+                    print(f"  - '{article.title}'")
+                    print(f"  - '{cluster[0].title}'")
+                    print(f"  → similarity={similarity:.2f}")
 
                 if similarity >= self.similarity_threshold:
                     cluster.append(article)
                     added_to_cluster = True
-                    print("[ClusterAgent] → Added to existing cluster")
+                    if self.verbose:
+                        print("[ClusterAgent] → Added to existing cluster")
                     break
 
             if not added_to_cluster:
                 clusters.append([article])
-                print("[ClusterAgent] → New cluster created")
+                if self.verbose:
+                    print("[ClusterAgent] → New cluster created")
 
-        print(f"[ClusterAgent] Clustering finished | clusters={len(clusters)}")
+        if self.verbose: 
+            print(f"[ClusterAgent] Clustering finished | clusters={len(clusters)}")
         return clusters
 
     # --------------------------------------------------

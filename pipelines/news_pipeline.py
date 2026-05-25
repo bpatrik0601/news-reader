@@ -52,8 +52,8 @@ class NewsPipeline:
 
         self.source_agent = SourceAgent()
         self.relevance_agent = RelevanceAgent(llm_client, debug=not self.demo)
-        self.cluster_agent = ClusterAgent(similarity_threshold=0.55)
-        self.cluster_merge_agent = ClusterMergeAgent(llm_client)
+        self.cluster_agent = ClusterAgent(similarity_threshold=0.55, verbose=not self.demo)
+        self.cluster_merge_agent = ClusterMergeAgent(llm_client, demo=self.demo)
         self.summary_agent = SummaryAgent(llm_client, demo=self.demo)
 
     def run(self, config: dict, topic: str) -> list[str]:
@@ -305,7 +305,8 @@ class NewsPipeline:
         self.logger.info(f"{len(clusters)} végleges témakört azonosított az AI.")
 
         for idx, cluster in enumerate(clusters, start=1):
-            print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
+            if not self.demo:
+                print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
