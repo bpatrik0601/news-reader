@@ -6,7 +6,6 @@ topic:
     - "robotika"
     - "játékfejlesztés"
 
-
 fetch:
   max_articles_per_source: 10
   max_total_articles: 50

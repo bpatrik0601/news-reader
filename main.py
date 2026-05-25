@@ -33,6 +33,7 @@ def main():
     parser.add_argument(
         "--topic",
         type=str,
+        default=None,
         help="Topic to filter news by (overrides config topic.query)",
     )
     parser.add_argument(
@@ -47,8 +48,22 @@ def main():
         default=2,
         help="Control demo complexity: 1=simple, 2=with clustering, 3=full pipeline",
     )
+    parser.add_argument(
+        "--interactive",
+        action="store_true",
+        help="Start the pipeline in interactive mode",
+    )
 
     args = parser.parse_args()
+
+    if args.interactive:
+        user_input = input("Adj meg kulcsszavakat vesszővel elválasztva: ")
+        topic = [k.strip() for k in user_input.split(",")]
+    elif args.topic:
+        topic = args.topic
+    else:
+        topic = "AI"
+
 
     config = load_config()
     topic = resolve_topic(config, args.topic)
