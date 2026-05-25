@@ -10,19 +10,23 @@ class RelevanceAgent:
     - LLM decision only for borderline cases
     """
 
-    def __init__(self, llm_client: LLMClient):
+    def __init__(self, llm_client: LLMClient, debug: bool = False):
         self.llm = llm_client
+        self.debug = debug
 
     def is_relevant(self, article_text: str, topic: str) -> bool:
-        print("[RelevanceAgent] Checking relevance")
-        print(f"[RelevanceAgent] Topic: {topic}")
-        print(f"[RelevanceAgent] Text length: {len(article_text)}")
+        
+        if self.debug:
+            print("[RelevanceAgent] Checking relevance")
+            print(f"[RelevanceAgent] Topic: {topic}")
+            print(f"[RelevanceAgent] Text length: {len(article_text)}")
 
         # --------------------------------------------------
         # 1️⃣ FAST, DETERMINISTIC PATH
         # --------------------------------------------------
         if topic.lower() in article_text.lower():
-            print("[RelevanceAgent] Explicit topic match found → YES")
+            if self.debug:
+                print("[RelevanceAgent] Explicit topic match found → YES")
             return True
 
         # --------------------------------------------------
@@ -30,13 +34,17 @@ class RelevanceAgent:
         # --------------------------------------------------
         prompt = self._build_prompt(article_text, topic)
 
-        print("[RelevanceAgent] Sending prompt to Ollama")
+        if self.debug:
+            print("[RelevanceAgent] Sending prompt to Ollama")
         response = self.llm.complete(prompt)
 
-        print(f"[RelevanceAgent] Raw response: {response}")
+        if self.debug:
+            print(f"[RelevanceAgent] Raw response: {response}")
 
         decision = response.strip().lower() == "yes"
-        print(f"[RelevanceAgent] Decision: {'YES' if decision else 'NO'}")
+        
+        if self.debug:
+            print(f"[RelevanceAgent] Decision: {'YES' if decision else 'NO'}")
 
         return decision
 
