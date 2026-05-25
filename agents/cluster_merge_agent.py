@@ -18,11 +18,13 @@ class ClusterMergeAgent:
         llm_client: LLMClient,
         title_similarity_gate: float = 0.35,
         number_overlap_gate: bool = True,
+        demo: bool = False,
     ):
         self.llm = llm_client
         self.title_similarity_gate = title_similarity_gate
         self.number_overlap_gate = number_overlap_gate
-    
+        self.demo = demo
+
     def merge(self, clusters: List[List[Article]], topic: str) -> tuple[List[List[Article]], bool]:
         print("[ClusterMergeAgent] Starting cluster-merge")
         print(f"[ClusterMergeAgent] Input clusters: {len(clusters)}")

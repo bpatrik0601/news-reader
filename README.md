@@ -346,7 +346,7 @@ Minden futtatás előtt ellenőrizd:
 
 ### 4.1 Alapértelmezett futtatás
 
-A projekt a `config/sources.yaml` fájlban beállított topic-kal fog futni (alapértelmezetten "OpenAI").
+A projekt a `config/sources.yaml` fájlban beállított topic(ok)-kal fog futni alapértelmezetten.
 
 #### Windows
 
@@ -366,7 +366,8 @@ python main.py
 
 ### 4.2 Egyedi topic-kal futtatás
 
-Egy adott téma miatt futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
+Egy adott téma miatt is futtathatod a pipeline-t (pl. "ChatGPT", "Szél energia", stb.).
+*(A rendszer a YAML (források, kulcsszavak) fájlon keresztül konfigurálható és a valós idejű futási interakciót is támogatja.)*
 
 #### Windows
 
@@ -396,12 +397,17 @@ A rendszer támogatja több kulcsszó egyidejű figyelését, amelyek alapján a
 
 #### Példa konfiguráció
 
-A `config/sources.yaml` fájlban több kulcsszót adhatsz meg, tetszés szerint:
-
+A `config/sources.yaml` fájlban több kulcsszót is megadhatsz, tetszés szerint:
+(1 kulcsszó példa:)
+```yaml
+topic:
+  query: "AI"
+```
+(több kulcsszó példa:)
 ```yaml
 topic:
   queries:
-    - "AI"
+    - "Meta"
     - "Tesla"
     - "OpenAI"
     - "robotika"
@@ -433,7 +439,7 @@ python replay_snapshot.py data/snapshots/2026-05-13_09-30-05.json
 2. Újra futtatja a szűrést, klaszterezést, összefoglalást
 3. Az LLM újra feldolgozza az adatokat (hasznos a teszteléshez)
 
-### 4.5 A futás kimenetei
+### 4.5 A [debug] futás kimenetei
 
 A projekt futása alatt látni fogsz:
 
@@ -459,12 +465,11 @@ A projekt futása alatt látni fogsz:
 [Pipeline] Snapshot saved: data/snapshots/2026-05-13_14-30-22.json
 ```
 
-<<<<<<< HEAD
-### 4.5 Demo mód és érthető AI működés
+### 4.5 Demo, Interactive mód és érthető AI működés
 A projekt támogat egy speciális demo módot, amely vizuálisan bemutatja, hogyan dolgozik egy több-ügynökös (agentic) AI rendszer.
 Ez különösen hasznos prezentációkhoz vagy oktatási célokra.
 
-Demo futtatása: 
+#### Demo mode futtatása: 
 - `--demo`: Bekapcsolja a demo módot, amely vizuális elemekkel mutatja be az ügynökök működését.
 
 Demo szintek (--level)
@@ -499,6 +504,7 @@ python main.py --demo --level 3 --topic "technology"
 - Csoportok összevonása (LLM döntéssel!)
 - Összefoglalók
 Ez a teljes rendszer, több AI „ügynök” együttműködésével.
+Ez a demo mód az összes lépést tartalmazza magyarázattal.
 
 - Mit figyeljünk meg a demo során?
 A demo során az alábbi AI viselkedések figyelhetők meg:
@@ -507,7 +513,13 @@ A demo során az alábbi AI viselkedések figyelhetők meg:
  - Összevonás (ugyanarról az eseményről szóló csoportok összeolvasztása);
  - Összefoglalás (lényeg kiemelése természetes nyelven).
 
-- Miért „agentic” ez a rendszer?
+#### Interactive mode futtatása:
+```Command Prompt / Windows Powershell
+python main.py --demo --level 3 --interactive
+```
+A felhasználó az éles futási idő alatt dinamikusan szolgáltathatja be a számára tetsző keresési kulcsszavakat limitmentesen.
+
+#### Miért „agentic” ez a rendszer?
 A klasszikus AI rendszerek általában egy lépésben válaszolnak.
 Ezen a projekt keretein belül viszont:
  - egy célt kap (pl. "AI hírek összegyűjtése")
@@ -524,16 +536,20 @@ Egy gyors összehasonlítás:
 „Keress cikkeket → válaszd ki a relevánsakat → csoportosítsd → foglald össze”.
 
 Az agentic rendszer tehát nem csak válaszol, hanem feladatot végez el.
-=======
-## Riport jellegű kimenet
-A rendszer a cikkeket strukturált formátumban jeleníti meg:
+
+## Kimenet
+A rendszer a kimenet során a következőket generálja:
+- Console output ((adott módtól függően) step-by-step pipeline)
+- Report export (`report_output.txt` + ha kell, markdown kiterjesztésben is)
+
+### Riport jelleg
+A rendszer a cikkeket strukturált formátumban jeleníti meg, amely egy klasszikus médiafigyelési riportot idéz:
 - cím
 - forrás
 - rövid kivonat (~300 karakter)
 - AI-alapú összefoglaló
 
 Ez a klasszikus médiafigyelési riportokhoz hasonló kimenetet biztosít.
->>>>>>> origin/develop
 
 ---
 
@@ -1081,4 +1097,3 @@ Ha hibára futtalálsz, tartalmazza:
 **Sikeresen telepítettél? Gratulálunk! 🎉**
 
 Kezdj a `python main.py` paranccsal, és nézd meg az első futást!
-
