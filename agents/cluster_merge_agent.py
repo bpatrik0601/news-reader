@@ -20,14 +20,20 @@ class ClusterMergeAgent:
         number_overlap_gate: bool = True,
         demo: bool = False,
     ):
+        
         self.llm = llm_client
         self.title_similarity_gate = title_similarity_gate
         self.number_overlap_gate = number_overlap_gate
         self.demo = demo
 
+    def _log(self, message: str):
+        if not self.demo:
+            print(f"[ClusterMergeAgent] {message}")
+
     def merge(self, clusters: List[List[Article]], topic: str) -> tuple[List[List[Article]], bool]:
-        print("[ClusterMergeAgent] Starting cluster-merge")
-        print(f"[ClusterMergeAgent] Input clusters: {len(clusters)}")
+         
+        self._log("Starting cluster-merge")
+        self._log(f"Input clusters: {len(clusters)}")
 
         if len(clusters) <= 1:
             return clusters, False
@@ -48,10 +54,10 @@ class ClusterMergeAgent:
                     if not self._prefilter(a, b):
                         j += 1
                         continue
-
-                    print(f"[ClusterMergeAgent] Candidate merge: cluster {i+1} <-> cluster {j+1}")
+                    
+                    self._log(f"Candidate merge: cluster {i+1} <-> cluster {j+1}")
                     if self._llm_says_same_story(a, b, topic):
-                        print(f"[ClusterMergeAgent] → MERGED cluster {j+1} into cluster {i+1}")
+                        self._log(f"→ MERGED cluster {j+1} into cluster {i+1}")
                         clusters[i] = clusters[i] + clusters[j]
                         del clusters[j]
 
@@ -60,12 +66,13 @@ class ClusterMergeAgent:
                         merged_any_global = True
 
                     else:
-                        print(f"[ClusterMergeAgent] → NOT merged")
+                        self._log(f"→ NOT merged")
                         j += 1
 
                 i += 1
 
-        print(f"[ClusterMergeAgent] Merge finished | output clusters: {len(clusters)}")
+        if not self.demo:
+            self._log(f"Merge finished | output clusters: {len(clusters)}")
         return clusters, merged_any_global
 
     # --------------------------
@@ -110,10 +117,13 @@ class ClusterMergeAgent:
     # --------------------------
     def _llm_says_same_story(self, cluster_a: List[Article], cluster_b: List[Article], topic: str) -> bool:
         prompt = self._build_prompt(cluster_a, cluster_b, topic)
-
-        print("[ClusterMergeAgent] Sending prompt to Ollama")
+        
+        
+        self._log("Sending prompt to Ollama")
+        
         response = self.llm.complete(prompt)
-        print(f"[ClusterMergeAgent] Raw response: {response}")
+
+        self._log(f"Raw response: {response}")
 
         normalized = response.strip().lower()
         return normalized == "yes"

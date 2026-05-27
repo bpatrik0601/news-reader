@@ -9,6 +9,9 @@ from models.article import Article
 
 
 class SourceAgent:
+    def __init__(self, demo: bool = False):
+        self.demo = demo
+
     def fetch(
         self,
         sources: List[dict],
@@ -19,21 +22,23 @@ class SourceAgent:
         articles: List[Article] = []
         cutoff = datetime.utcnow() - timedelta(hours=lookback_hours)
 
-        print(
-            f"[SourceAgent] Starting RSS fetch | "
-            f"lookback_hours={lookback_hours}, "
-            f"max_per_source={max_per_source}, "
-            f"max_total={max_total}"
-        )
+        if not self.demo:
+            print(
+                f"[SourceAgent] Starting RSS fetch | "
+                f"lookback_hours={lookback_hours}, "
+                f"max_per_source={max_per_source}, "
+                f"max_total={max_total}"
+            )
 
         for source in sources:
             source_count = 0
             feed = feedparser.parse(source["rss"])
 
-            print(
-                f"[SourceAgent] Processing source '{source['name']}' | "
-                f"RSS entries={len(feed.entries)}"
-            )
+            if not self.demo:
+                print(
+                    f"[SourceAgent] Processing source '{source['name']}' | "
+                    f"RSS entries={len(feed.entries)}"
+                )
 
             for entry in feed.entries:
                 if source_count >= max_per_source or len(articles) >= max_total:
@@ -59,14 +64,16 @@ class SourceAgent:
 
                 source_count += 1
 
-            print(
-                f"[SourceAgent] Source '{source['name']}' fetched articles={source_count}"
-            )
+            if not self.demo:
+                print(
+                    f"[SourceAgent] Source '{source['name']}' fetched articles={source_count}"
+                )
 
             if len(articles) >= max_total:
-                print(
-                    f"[SourceAgent] Global article limit reached ({max_total}), stopping fetch"
-                )
+                if not self.demo:
+                    print(
+                        f"[SourceAgent] Global article limit reached ({max_total}), stopping fetch"
+                    )
                 break
 
         # Final aggregation
@@ -76,11 +83,13 @@ class SourceAgent:
                 per_source_stats.get(article.source, 0) + 1
             )
 
-        print(f"[SourceAgent] Fetch completed | total_articles={len(articles)}")
+        if not self.demo:
+            print(f"[SourceAgent] Fetch completed | total_articles={len(articles)}")
         for source, count in per_source_stats.items():
-            print(
-                f"[SourceAgent] Final count | source='{source}' articles={count}"
-            )
+            if not self.demo:
+                print(
+                    f"[SourceAgent] Final count | source='{source}' articles={count}"
+                )
 
         return articles
 

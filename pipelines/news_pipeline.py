@@ -115,12 +115,12 @@ class NewsPipeline:
             for i, a in enumerate(articles)
         ]
 
-        time.sleep(1)  # Szünet a lépések között, hogy jobban látszódjon a demo során
+        # time.sleep(1)  # Szünet a lépések között, ha esetleg szimuláltabb kell, hogy legyen a demo során
 
         # --------------------------------------------------
         # 2. RELEVANCE
         # --------------------------------------------------
-        self.logger.step("2. lépés", f"Relevancia-szűrés --> releváns cikkek kiválasztása a témához : {topic}.")
+        self.logger.step("2. lépés", f"Relevancia-szűrés --> releváns cikkek kiválasztása a témához: {topic}.")
         
         if self.demo and isinstance(topic, list):
             self.logger.info(f"Figyelt kulcsszavak: {', '.join(topic)}")
@@ -224,7 +224,7 @@ class NewsPipeline:
 
             return [summary]
 
-        time.sleep(1)
+        # time.sleep(1)
 
         # --------------------------------------------------
         # 3. CLUSTERING
@@ -305,8 +305,11 @@ class NewsPipeline:
         self.logger.info(f"{len(clusters)} végleges témakört azonosított az AI.")
 
         for idx, cluster in enumerate(clusters, start=1):
-            if not self.demo:
+            if self.demo:
+                print(f"   • {len(cluster)} cikk tartozik ebbe a csoportba.")
+            else:
                 print(f"[Pipeline] Cluster {idx} | articles={len(cluster)}")
+
             for article in cluster:
                 print(f"  - [{article.source}] {article.title}")
 
@@ -315,7 +318,7 @@ class NewsPipeline:
             for cluster in clusters
         ]
 
-        time.sleep(1)
+        # time.sleep(1)
 
         # --------------------------------------------------
         # 4. SUMMARY

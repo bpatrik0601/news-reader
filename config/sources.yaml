@@ -14,9 +14,9 @@ fetch:
 sources:
   - name: Telex
     rss: https://telex.hu/rss
-  - name: HVG
-    rss: https://hvg.hu/rss
-#  - name: AP News
-#    rss: https://rss.dw.com/rdf/rss-en-all
+#  - name: HVG
+#    rss: https://hvg.hu/rss
+  - name: AP News
+    rss: https://rss.dw.com/rdf/rss-en-all
 #  - name: Al Jazeera
 #    rss: https://www.aljazeera.com/xml/rss/all.xml
